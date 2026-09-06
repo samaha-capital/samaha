@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAMAHA CAPITAL | تسجيل العقارات وإدارة الأملاك</title>
+    <title>SAMAHA CAPITAL | تسجيل العقارات وإدارة الأملاك والاستشارات القانونية</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -15,7 +15,6 @@
             --card: #1C1C1C;
             --gray: #2A2A2A;
             --white: #FFFFFF;
-            --muted: #9A9A9A;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -193,8 +192,8 @@
         .pkg-tag.popular { background: rgba(201,162,39,0.25); color: var(--gold); }
         .pkg-tag.expat { background: rgba(100,160,255,0.2); color: #7EB6FF; }
         .package-name { font-size: 19px; font-weight: 800; color: var(--gold); margin-bottom: 6px; }
-        .package-price { font-size: 26px; font-weight: 800; color: #fff; }
-        .package-price span { font-size: 13px; font-weight: 500; color: #999; }
+        .package-price { font-size: 28px; font-weight: 800; color: #fff; }
+        .package-price span { font-size: 13px; font-weight: 500; color: #999; display: block; margin-top: 2px; }
         .package-desc { font-size: 13px; color: #AAA; margin: 10px 0 16px; min-height: 38px; }
         .package-features { list-style: none; text-align: right; }
         .package-features li {
@@ -204,6 +203,51 @@
             display: flex; align-items: center; gap: 8px;
         }
         .package-features li::before { content: '✓'; color: var(--gold); font-weight: 700; }
+
+        .legal-section {
+            background: linear-gradient(165deg, #0F1A1F 0%, #1C1C1C 50%, #141414 100%);
+            border: 1.5px solid rgba(100,160,255,0.35);
+            position: relative;
+        }
+        .legal-section::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, #3A6EA5, #7EB6FF, #3A6EA5);
+        }
+        .legal-badge {
+            display: inline-block;
+            background: rgba(100,160,255,0.18);
+            color: #7EB6FF;
+            font-size: 12px; font-weight: 700;
+            padding: 4px 14px; border-radius: 20px;
+            margin-bottom: 8px;
+        }
+        .legal-content {
+            font-size: 14px;
+            color: #CCC;
+            line-height: 1.85;
+            margin-bottom: 18px;
+        }
+        .legal-content strong { color: var(--gold-light); }
+        .legal-services {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 18px 0;
+        }
+        @media (max-width: 600px) { .legal-services { grid-template-columns: 1fr; } }
+        .legal-item {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(100,160,255,0.2);
+            border-radius: 12px;
+            padding: 14px 16px;
+            font-size: 13.5px;
+            color: #DDD;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .legal-item span { color: #7EB6FF; font-weight: 700; font-size: 16px; }
 
         .terms-box {
             background: rgba(0,0,0,0.3);
@@ -255,6 +299,13 @@
             margin-top: 12px;
         }
         .submit-btn.secondary:hover { background: rgba(201,162,39,0.1); }
+        .submit-btn.legal-btn {
+            background: transparent;
+            border: 2px solid #7EB6FF;
+            color: #7EB6FF;
+            box-shadow: none;
+        }
+        .submit-btn.legal-btn:hover { background: rgba(100,160,255,0.1); }
 
         .note { margin-top: 14px; font-size: 12.5px; color: #888; }
         .note strong { color: var(--gold); }
@@ -312,7 +363,7 @@
 
     <div class="hero">
         <h1>نموذج تسجيل العقارات</h1>
-        <p>سجّل عقارك للبيع أو الإيجار بسهولة تامة. النموذج مصمم ليخدم جميع فئات العملاء في السوق المصري بدقة واحترافية.</p>
+        <p>سجّل عقارك للبيع أو الإيجار بسهولة تامة. النموذج مصمم ليخدم جميع فئات العملاء في السوق المصري بدقة واحترافية عالية.</p>
     </div>
 
     <form id="propertyForm">
@@ -427,8 +478,8 @@
                     <input type="text" id="floor" placeholder="الثالث / أرضي / روف">
                 </div>
                 <div class="form-group">
-                    <label>السعر المطلوب (جنيه)</label>
-                    <input type="number" id="price" placeholder="2500000" min="0">
+                    <label>السعر / الإيجار المطلوب (جنيه)</label>
+                    <input type="number" id="price" placeholder="2500000 أو الإيجار الشهري" min="0">
                 </div>
                 <div class="form-group full">
                     <label>العنوان التفصيلي</label>
@@ -475,37 +526,37 @@
     <div class="hero" style="background: linear-gradient(135deg, rgba(201,162,39,0.14), rgba(100,140,255,0.06));">
         <div class="mgmt-badge">خدمة احترافية</div>
         <h1>إدارة الأملاك</h1>
-        <p>خدمة متخصصة لأصحاب العقارات داخل مصر وللمغتربين بالخارج. نُدير أملاكك بكل احترافية وطمأنينة كأنك موجود.</p>
+        <p>خدمة متخصصة لأصحاب العقارات داخل مصر وللمغتربين بالخارج. نُدير أملاكك بنسبة من الإيجار فقط — بدون مبالغ ثابتة — بكل احترافية وطمأنينة.</p>
     </div>
 
     <div class="section mgmt-section">
         <div class="section-title"><div class="icon">🏢</div> باقات إدارة الأملاك</div>
         <p class="mgmt-intro">
-            باقتان فقط مصممتان بعناية لتناسب الطبقة المتوسطة والعليا في مصر، وكذلك المغتربين الذين يحتاجون إدارة موثوقة عن بُعد.
+            باقتان مصممتان وفق أفضل ممارسات السوق المصري (5–10% من الإيجار). النسبة تُحسب من قيمة الإيجار الشهري الفعلي فقط.
         </p>
 
         <div class="packages-grid">
             <label class="package-card" id="pkgSmart">
-                <input type="radio" name="mgmtPackage" value="باقة الإدارة الذكية">
+                <input type="radio" name="mgmtPackage" value="باقة الإدارة الذكية - 7%">
                 <div class="pkg-tag popular">الأكثر اختياراً</div>
                 <div class="package-name">باقة الإدارة الذكية</div>
-                <div class="package-price">2,800 <span>جنيه / شهر</span></div>
-                <div class="package-desc">مثالية لأصحاب عقار أو عقارين داخل مصر<br>طبقة متوسطة وعليا</div>
+                <div class="package-price">7% <span>من الإيجار الشهري</span></div>
+                <div class="package-desc">مثالية لأصحاب عقار أو عقارين داخل مصر<br>الطبقة المتوسطة والعليا</div>
                 <ul class="package-features">
                     <li>عرض وتسويق العقار باحتراف</li>
                     <li>متابعة المستأجرين والتحصيل</li>
                     <li>تقارير شهرية واضحة</li>
                     <li>متابعة الصيانة الدورية</li>
                     <li>دعم واتساب سريع</li>
-                    <li>تصوير وتوثيق الحالة</li>
+                    <li>تصوير وتوثيق حالة العقار</li>
                 </ul>
             </label>
 
             <label class="package-card" id="pkgExpat">
-                <input type="radio" name="mgmtPackage" value="باقة المغترب بلس">
+                <input type="radio" name="mgmtPackage" value="باقة المغترب بلس - 9%">
                 <div class="pkg-tag expat">للمغتربين</div>
                 <div class="package-name">باقة المغترب بلس</div>
-                <div class="package-price">4,500 <span>جنيه / شهر</span></div>
+                <div class="package-price">9% <span>من الإيجار الشهري</span></div>
                 <div class="package-desc">للإخوة المغتربين بالخارج<br>إدارة كاملة عن بُعد بثقة عالية</div>
                 <ul class="package-features">
                     <li>كل مميزات الإدارة الذكية</li>
@@ -540,7 +591,7 @@
                 </div>
                 <div class="form-group full">
                     <label>ملاحظات خاصة بطلب الإدارة</label>
-                    <textarea id="mgmtNotes" placeholder="عدد العقارات، نوع الإدارة المطلوبة، أي تفاصيل إضافية..."></textarea>
+                    <textarea id="mgmtNotes" placeholder="عدد العقارات، الإيجار التقريبي، أي تفاصيل إضافية..."></textarea>
                 </div>
             </div>
         </div>
@@ -550,18 +601,18 @@
             <div class="terms-box">
                 <h4>بنود الاشتراك</h4>
                 <ul>
-                    <li>الاشتراك شهري ويُجدد تلقائياً ما لم يُبلغ العميل برغبته في الإيقاف قبل 7 أيام من نهاية الدورة.</li>
-                    <li>يبدأ العمل بعد استلام البيانات والمستندات اللازمة والتأكيد من الطرفين.</li>
+                    <li>تُحسب أتعاب الإدارة بنسبة من قيمة الإيجار الشهري المحصّل فعلياً فقط (لا تُفرض في حالة الشغور).</li>
+                    <li>يبدأ العمل بعد استلام المستندات اللازمة والتأكيد الكتابي من الطرفين.</li>
                     <li>الشركة ملتزمة بالحفاظ على سرية بيانات العميل والعقار.</li>
-                    <li>في حالة المغتربين: يتم إرسال تقارير دورية عبر البريد الإلكتروني وواتساب.</li>
-                    <li>أي مصروفات صيانة أو رسوم حكومية تكون على حساب المالك ويتم إبلاغه مسبقاً.</li>
+                    <li>في حالة المغتربين: تُرسل تقارير دورية عبر البريد الإلكتروني وواتساب.</li>
+                    <li>أي مصروفات صيانة أو رسوم حكومية تكون على حساب المالك ويتم إبلاغه مسبقاً والموافقة عليها.</li>
                     <li>يحق لأي طرف إنهاء الخدمة مع إشعار مسبق بـ 15 يوماً.</li>
                 </ul>
                 <h4>التزام العميل</h4>
                 <ul>
                     <li>تقديم مستندات العقار الصحيحة والمحدثة.</li>
                     <li>الرد على الاستفسارات الضرورية في وقت مناسب.</li>
-                    <li>سداد قيمة الاشتراك في موعدها.</li>
+                    <li>الالتزام بسداد النسبة المتفق عليها من الإيجار المحصّل.</li>
                 </ul>
             </div>
             <label class="check-row">
@@ -576,12 +627,46 @@
         </div>
     </div>
 
+    <div class="divider"></div>
+
+    <div class="hero" style="background: linear-gradient(135deg, rgba(100,160,255,0.12), rgba(201,162,39,0.05));">
+        <div class="legal-badge">قيمة مضافة حصرية</div>
+        <h1>الاستشارات القانونية العقارية</h1>
+        <p>بالتعاون مع <strong style="color:#E8D48B">مؤسسة سماحة القانونية</strong> — حماية قانونية متكاملة لعقاراتك وعقودك.</p>
+    </div>
+
+    <div class="section legal-section">
+        <div class="section-title"><div class="icon">⚖️</div> خدمات مؤسسة سماحة القانونية</div>
+        
+        <div class="legal-content">
+            تقدّم <strong>سماحة كابيتال</strong> بالتعاون مع <strong>مؤسسة سماحة القانونية</strong> باقة متكاملة من الخدمات القانونية العقارية، لضمان حماية حقوقك وتوثيق معاملاتك وفق أعلى المعايير المهنية والقانونية المعمول بها في جمهورية مصر العربية.
+        </div>
+
+        <div class="legal-services">
+            <div class="legal-item"><span>①</span> استشارات قانونية عقارية متخصصة (بيع – إيجار – تمليك – نزاعات)</div>
+            <div class="legal-item"><span>②</span> مراجعة وصياغة عقود البيع والإيجار والتمويل العقاري</div>
+            <div class="legal-item"><span>③</span> فحص الملكية والسجلات العقارية والتأكد من سلامة الأوراق</div>
+            <div class="legal-item"><span>④</span> إجراءات التسجيل والشهر العقاري والتوثيق</div>
+            <div class="legal-item"><span>⑤</span> متابعة النزاعات العقارية وتمثيل العميل قانونياً عند الحاجة</div>
+            <div class="legal-item"><span>⑥</span> استشارات للمغتربين بشأن إدارة وحماية أملاكهم في مصر</div>
+        </div>
+
+        <div class="legal-content" style="margin-top:8px; font-size:13.5px; color:#AAA;">
+            جميع الاستشارات والأعمال القانونية تتم تحت إشراف محامين متخصصين في الشأن العقاري، مع الالتزام التام بسرية المعلومات وحقوق العميل.
+        </div>
+
+        <div class="submit-area" style="margin-top:20px;">
+            <button type="button" class="submit-btn legal-btn" id="legalSubmitBtn">طلب استشارة قانونية عقارية عبر واتساب ⚖️</button>
+            <p class="note">يُرسل الطلب إلى قسم الاستشارات القانونية بالتنسيق مع مؤسسة سماحة القانونية</p>
+        </div>
+    </div>
+
 </div>
 
 <footer class="footer">
     <div>إدارة العقارات: <a href="https://wa.me/201505494790" target="_blank">01505494790</a></div>
     <div style="margin-top:6px">إدارة الأملاك: <a href="https://wa.me/201016105658" target="_blank">01016105658</a></div>
-    <div class="footer-copy">© 2026 SAMAHA CAPITAL — Investment • Technology • Consulting • Real Estate</div>
+    <div class="footer-copy">© 2026 SAMAHA CAPITAL — بالتعاون مع مؤسسة سماحة القانونية<br>Investment • Technology • Consulting • Real Estate</div>
 </footer>
 
 <div class="modal-overlay" id="successModal">
@@ -661,7 +746,7 @@
 • المساحة: ${areaSize} م²
 • الغرف: ${rooms}
 • الطابق: ${floor}
-• السعر: ${price} جنيه
+• السعر/الإيجار: ${price} جنيه
 • العنوان: ${address}
 • ملاحظات: ${notes}
 
@@ -707,9 +792,34 @@
 📝 *ملاحظات:* ${notes}
 
 ✅ تمت الموافقة على شروط الاشتراك
+(النسبة تُحسب من الإيجار الشهري المحصّل فقط)
 
 ---
 تم الطلب عبر النموذج الإلكتروني - قسم إدارة الأملاك`;
+
+        const url = `https://wa.me/201016105658?text=${encodeURIComponent(msg)}`;
+        document.getElementById('successModal').classList.add('show');
+        setTimeout(() => window.open(url, '_blank'), 700);
+    });
+
+    document.getElementById('legalSubmitBtn').addEventListener('click', function() {
+        const name = document.getElementById('clientName').value.trim() || 'لم يُحدد بعد';
+        const phone = document.getElementById('clientPhone').value.trim() || 'لم يُحدد بعد';
+
+        const msg = `⚖️ *طلب استشارة قانونية عقارية - SAMAHA CAPITAL*
+
+بالتعاون مع مؤسسة سماحة القانونية
+
+👤 *بيانات التواصل*
+• الاسم: ${name}
+• الموبايل: ${phone}
+
+أرغب في الحصول على استشارة قانونية عقارية (مراجعة عقود / فحص ملكية / استشارات / إجراءات تسجيل...).
+
+يرجى التواصل معي في أقرب وقت.
+
+---
+تم الطلب عبر النموذج الإلكتروني`;
 
         const url = `https://wa.me/201016105658?text=${encodeURIComponent(msg)}`;
         document.getElementById('successModal').classList.add('show');
