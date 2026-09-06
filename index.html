@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل العقارات | SAMAHA CAPITAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C9A227;
+            --gold-light: #E8D48B;
+            --gold-dark: #A67C00;
+            --black: #0D0D0D;
+            --dark: #1A1A1A;
+            --gray: #2C2C2C;
+            --light-gray: #F5F5F5;
+            --white: #FFFFFF;
+            --success: #2E7D32;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #0D0D0D 100%);
+            color: var(--white);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(180deg, rgba(13,13,13,0.98) 0%, rgba(26,26,26,0.95) 100%);
+            border-bottom: 2px solid var(--gold);
+            padding: 25px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            width: 80px;
+            height: 80px;
+            border: 3px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--gold);
+            background: rgba(201, 162, 39, 0.1);
+            margin-bottom: 5px;
+            box-shadow: 0 0 25px rgba(201, 162, 39, 0.3);
+        }
+
+        .company-name-ar {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--gold);
+            letter-spacing: 1px;
+        }
+
+        .company-name-en {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gold-light);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .tagline {
+            font-size: 13px;
+            color: #AAAAAA;
+            margin-top: 6px;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 30px 20px 60px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 25px;
+            background: rgba(201, 162, 39, 0.08);
+            border: 1px solid rgba(201, 162, 39, 0.25);
+            border-radius: 16px;
+        }
+
+        .intro h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .intro p {
+            font-size: 15px;
+            color: #CCCCCC;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background: var(--dark);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            border-radius: 18px;
+            padding: 28px 25px;
+            margin-bottom: 28px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            transition: border-color 0.3s;
+        }
+
+        .section:hover {
+            border-color: rgba(201, 162, 39, 0.55);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 22px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(201, 162, 39, 0.25);
+        }
+
+        .section-title .icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--black);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        @media (max-width: 680px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gold-light);
+        }
+
+        label .required {
+            color: #FF6B6B;
+            margin-right: 3px;
+        }
+
+        input, select, textarea {
+            background: var(--gray);
+            border: 1.5px solid #3A3A3A;
+            border-radius: 10px;
+            padding: 13px 15px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 15px;
+            color: var(--white);
+            transition: all 0.25s;
+            outline: none;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.2);
+            background: #333333;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #777;
+        }
+
+        select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23C9A227' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: left 15px center;
+            padding-left: 40px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .options-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .option-card {
+            flex: 1;
+            min-width: 120px;
+            background: var(--gray);
+            border: 1.5px solid #3A3A3A;
+            border-radius: 12px;
+            padding: 14px 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s;
+            position: relative;
+        }
+
+        .option-card:hover {
+            border-color: var(--gold);
+            background: rgba(201, 162, 39, 0.1);
+        }
+
+        .option-card input {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .option-card.active {
+            border-color: var(--gold);
+            background: rgba(201, 162, 39, 0.18);
+            box-shadow: 0 0 15px rgba(201, 162, 39, 0.25);
+        }
+
+        .option-card .opt-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #DDD;
+        }
+
+        .option-card.active .opt-label {
+            color: var(--gold);
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 680px) {
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .package-card {
+            background: linear-gradient(160deg, #1F1F1F 0%, #2A2A2A 100%);
+            border: 2px solid #3A3A3A;
+            border-radius: 16px;
+            padding: 24px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: transparent;
+            transition: background 0.3s;
+        }
+
+        .package-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold);
+        }
+
+        .package-card.selected {
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.25);
+        }
+
+        .package-card.selected::before {
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
+        }
+
+        .package-card input {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .package-badge {
+            display: inline-block;
+            background: rgba(201, 162, 39, 0.2);
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+
+        .package-name {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .package-price {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .package-price span {
+            font-size: 14px;
+            font-weight: 500;
+            color: #AAA;
+        }
+
+        .package-desc {
+            font-size: 13px;
+            color: #BBB;
+            margin-bottom: 18px;
+            min-height: 40px;
+        }
+
+        .package-features {
+            list-style: none;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        .package-features li {
+            font-size: 13.5px;
+            color: #DDD;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .package-features li::before {
+            content: '✓';
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .submit-area {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--black);
+            border: none;
+            border-radius: 14px;
+            padding: 18px 50px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(201, 162, 39, 0.35);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(201, 162, 39, 0.5);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .whatsapp-note {
+            margin-top: 18px;
+            font-size: 13px;
+            color: #999;
+        }
+
+        .whatsapp-note strong {
+            color: var(--gold);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid rgba(201, 162, 39, 0.2);
+            margin-top: 20px;
+        }
+
+        .footer-contact {
+            font-size: 16px;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .footer-contact a {
+            color: var(--gold);
+            text-decoration: none;
+            direction: ltr;
+            display: inline-block;
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color: #777;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--dark);
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            padding: 35px 30px;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            animation: modalIn 0.35s ease;
+        }
+
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal h3 {
+            color: var(--gold);
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .modal p {
+            color: #CCC;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        .modal-btn {
+            background: var(--gold);
+            color: var(--black);
+            border: none;
+            border-radius: 10px;
+            padding: 12px 30px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-icon">S</div>
+            <div class="company-name-ar">سماحة كابيتال</div>
+            <div class="company-name-en">SAMAHA CAPITAL</div>
+            <div class="tagline">INVESTMENT • TECHNOLOGY • CONSULTING • REAL ESTATE</div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="intro">
+            <h1>نموذج تسجيل العقارات</h1>
+            <p>
+                سجّل عقارك بسهولة وأمان سواء للبيع أو الإيجار. النموذج مصمم ليكون بسيطاً وواضحاً 
+                لجميع فئات العملاء في السوق المصري. بعد التسجيل سيتم التواصل معك فوراً عبر واتساب.
+            </p>
+        </div>
+
+        <form id="propertyForm">
+
+            <div class="section">
+                <div class="section-title">
+                    <div class="icon">👤</div>
+                    بيانات العميل
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label><span class="required">*</span> الاسم الكامل</label>
+                        <input type="text" id="clientName" name="clientName" placeholder="مثال: أحمد محمد علي" required>
+                    </div>
+                    <div class="form-group">
+                        <label><span class="required">*</span> رقم الموبايل</label>
+                        <input type="tel" id="clientPhone" name="clientPhone" placeholder="01xxxxxxxxx" required>
+                    </div>
+                    <div class="form-group">
+                        <label>رقم واتساب (إن كان مختلفاً)</label>
+                        <input type="tel" id="clientWhatsapp" name="clientWhatsapp" placeholder="01xxxxxxxxx">
+                    </div>
+                    <div class="form-group">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" id="clientEmail" name="clientEmail" placeholder="example@email.com">
+                    </div>
+                    <div class="form-group full">
+                        <label>المحافظة / المدينة</label>
+                        <input type="text" id="clientCity" name="clientCity" placeholder="مثال: القاهرة - مدينة نصر">
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <div class="icon">🏠</div>
+                    بيانات العقار
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label><span class="required">*</span> نوع العرض</label>
+                    <div class="options-row" id="offerTypeOptions">
+                        <label class="option-card" data-value="بيع">
+                            <input type="radio" name="offerType" value="بيع" required>
+                            <div class="opt-label">بيع</div>
+                        </label>
+                        <label class="option-card" data-value="إيجار">
+                            <input type="radio" name="offerType" value="إيجار">
+                            <div class="opt-label">إيجار</div>
+                        </label>
+                        <label class="option-card" data-value="بيع أو إيجار">
+                            <input type="radio" name="offerType" value="بيع أو إيجار">
+                            <div class="opt-label">بيع أو إيجار</div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label><span class="required">*</span> نوع العقار</label>
+                    <div class="options-row" id="propertyTypeOptions">
+                        <label class="option-card" data-value="شقة">
+                            <input type="radio" name="propertyType" value="شقة" required>
+                            <div class="opt-label">شقة</div>
+                        </label>
+                        <label class="option-card" data-value="فيلا">
+                            <input type="radio" name="propertyType" value="فيلا">
+                            <div class="opt-label">فيلا</div>
+                        </label>
+                        <label class="option-card" data-value="أرض">
+                            <input type="radio" name="propertyType" value="أرض">
+                            <div class="opt-label">أرض</div>
+                        </label>
+                        <label class="option-card" data-value="محل تجاري">
+                            <input type="radio" name="propertyType" value="محل تجاري">
+                            <div class="opt-label">محل تجاري</div>
+                        </label>
+                        <label class="option-card" data-value="مكتب إداري">
+                            <input type="radio" name="propertyType" value="مكتب إداري">
+                            <div class="opt-label">مكتب إداري</div>
+                        </label>
+                        <label class="option-card" data-value="أخرى">
+                            <input type="radio" name="propertyType" value="أخرى">
+                            <div class="opt-label">أخرى</div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label><span class="required">*</span> المحافظة</label>
+                        <select id="governorate" name="governorate" required>
+                            <option value="">اختر المحافظة</option>
+                            <option value="القاهرة">القاهرة</option>
+                            <option value="الجيزة">الجيزة</option>
+                            <option value="الإسكندرية">الإسكندرية</option>
+                            <option value="القليوبية">القليوبية</option>
+                            <option value="الشرقية">الشرقية</option>
+                            <option value="الدقهلية">الدقهلية</option>
+                            <option value="البحيرة">البحيرة</option>
+                            <option value="المنوفية">المنوفية</option>
+                            <option value="الغربية">الغربية</option>
+                            <option value="كفر الشيخ">كفر الشيخ</option>
+                            <option value="دمياط">دمياط</option>
+                            <option value="بورسعيد">بورسعيد</option>
+                            <option value="الإسماعيلية">الإسماعيلية</option>
+                            <option value="السويس">السويس</option>
+                            <option value="شمال سيناء">شمال سيناء</option>
+                            <option value="جنوب سيناء">جنوب سيناء</option>
+                            <option value="الفيوم">الفيوم</option>
+                            <option value="بني سويف">بني سويف</option>
+                            <option value="المنيا">المنيا</option>
+                            <option value="أسيوط">أسيوط</option>
+                            <option value="سوهاج">سوهاج</option>
+                            <option value="قنا">قنا</option>
+                            <option value="الأقصر">الأقصر</option>
+                            <option value="أسوان">أسوان</option>
+                            <option value="البحر الأحمر">البحر الأحمر</option>
+                            <option value="الوادي الجديد">الوادي الجديد</option>
+                            <option value="مطروح">مطروح</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><span class="required">*</span> المنطقة / الحي</label>
+                        <input type="text" id="area" name="area" placeholder="مثال: التجمع الخامس - اللوتس" required>
+                    </div>
+                    <div class="form-group">
+                        <label>المساحة (متر مربع)</label>
+                        <input type="number" id="areaSize" name="areaSize" placeholder="مثال: 150" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label>عدد الغرف</label>
+                        <select id="rooms" name="rooms">
+                            <option value="">اختر</option>
+                            <option value="1">1 غرفة</option>
+                            <option value="2">2 غرفة</option>
+                            <option value="3">3 غرف</option>
+                            <option value="4">4 غرف</option>
+                            <option value="5">5 غرف</option>
+                            <option value="6+">6 غرف فأكثر</option>
+                            <option value="استوديو">استوديو</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>الطابق</label>
+                        <input type="text" id="floor" name="floor" placeholder="مثال: الثالث / أرضي / روف">
+                    </div>
+                    <div class="form-group">
+                        <label>السعر المطلوب (جنيه مصري)</label>
+                        <input type="number" id="price" name="price" placeholder="مثال: 2500000" min="0">
+                    </div>
+                    <div class="form-group full">
+                        <label>العنوان التفصيلي</label>
+                        <input type="text" id="address" name="address" placeholder="الشارع - رقم العمارة - علامة مميزة">
+                    </div>
+                    <div class="form-group full">
+                        <label>ملاحظات إضافية عن العقار</label>
+                        <textarea id="notes" name="notes" placeholder="مثال: التشطيب سوبر لوكس، يوجد جراج، قريب من الخدمات، وثائق كاملة..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <div class="icon">📦</div>
+                    باقات إدارة الأملاك
+                </div>
+                <p style="color:#AAA; font-size:14px; margin-bottom:20px; text-align:center;">
+                    اختر الباقة المناسبة لك (اختيارية) — مصممة لتناسب معظم فئات الشعب المصري
+                </p>
+
+                <div class="packages-grid">
+                    <label class="package-card" id="pkg1">
+                        <input type="radio" name="package" value="الباقة الأساسية">
+                        <div class="package-badge">الأكثر طلباً</div>
+                        <div class="package-name">الباقة الأساسية</div>
+                        <div class="package-price">1,500 <span>جنيه / شهر</span></div>
+                        <div class="package-desc">مثالية لأصحاب عقار واحد أو اثنين</div>
+                        <ul class="package-features">
+                            <li>عرض العقار على منصاتنا</li>
+                            <li>متابعة الطلبات والمهتمين</li>
+                            <li>تواصل مباشر مع العملاء</li>
+                            <li>تقرير شهري مبسط</li>
+                            <li>دعم عبر واتساب</li>
+                        </ul>
+                    </label>
+
+                    <label class="package-card" id="pkg2">
+                        <input type="radio" name="package" value="الباقة الشاملة">
+                        <div class="package-badge">قيمة عالية</div>
+                        <div class="package-name">الباقة الشاملة</div>
+                        <div class="package-price">2,900 <span>جنيه / شهر</span></div>
+                        <div class="package-desc">مناسبة لمن يريد إدارة كاملة ومريحة</div>
+                        <ul class="package-features">
+                            <li>كل مميزات الباقة الأساسية</li>
+                            <li>تصوير احترافي للعقار</li>
+                            <li>إدارة الإيجار والتحصيل</li>
+                            <li>متابعة الصيانة الدورية</li>
+                            <li>تقارير مفصلة + استشارات</li>
+                        </ul>
+                    </label>
+                </div>
+
+                <div style="margin-top:18px; text-align:center;">
+                    <label class="option-card" style="display:inline-block; min-width:200px;" id="pkgNone">
+                        <input type="radio" name="package" value="لا أرغب حالياً" checked>
+                        <div class="opt-label">لا أرغب في باقة حالياً</div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="submit-area">
+                <button type="submit" class="submit-btn">
+                    <span>إرسال عبر واتساب</span>
+                    <span style="font-size:22px;">📱</span>
+                </button>
+                <p class="whatsapp-note">
+                    سيتم فتح واتساب تلقائياً برسالة تحتوي على جميع بياناتك<br>
+                    للتواصل المباشر مع الإدارة: <strong>01505494790</strong>
+                </p>
+            </div>
+
+        </form>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-contact">
+            للتواصل مع الإدارة: 
+            <a href="https://wa.me/201505494790" target="_blank">01505494790</a>
+        </div>
+        <div class="footer-copy">
+            © 2026 SAMAHA CAPITAL — جميع الحقوق محفوظة
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="successModal">
+        <div class="modal">
+            <h3>تم تجهيز الرسالة بنجاح ✓</h3>
+            <p>سيتم فتح واتساب الآن. اضغط "إرسال" داخل واتساب لإكمال التسجيل.</p>
+            <button class="modal-btn" onclick="closeModal()">حسناً</button>
+        </div>
+    </div>
+
+    <script>
+        function setupOptionCards(containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            const cards = container.querySelectorAll('.option-card');
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    cards.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    this.querySelector('input').checked = true;
+                });
+            });
+        }
+
+        setupOptionCards('offerTypeOptions');
+        setupOptionCards('propertyTypeOptions');
+
+        const packages = document.querySelectorAll('.package-card, #pkgNone');
+        packages.forEach(pkg => {
+            pkg.addEventListener('click', function() {
+                packages.forEach(p => p.classList.remove('selected', 'active'));
+                this.classList.add(this.id === 'pkgNone' ? 'active' : 'selected');
+                this.querySelector('input').checked = true;
+            });
+        });
+
+        document.getElementById('propertyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('clientName').value.trim();
+            const phone = document.getElementById('clientPhone').value.trim();
+            const whatsapp = document.getElementById('clientWhatsapp').value.trim() || phone;
+            const email = document.getElementById('clientEmail').value.trim() || 'غير محدد';
+            const city = document.getElementById('clientCity').value.trim() || 'غير محدد';
+
+            const offerType = document.querySelector('input[name="offerType"]:checked')?.value || '';
+            const propertyType = document.querySelector('input[name="propertyType"]:checked')?.value || '';
+            const governorate = document.getElementById('governorate').value;
+            const area = document.getElementById('area').value.trim();
+            const areaSize = document.getElementById('areaSize').value || 'غير محدد';
+            const rooms = document.getElementById('rooms').value || 'غير محدد';
+            const floor = document.getElementById('floor').value.trim() || 'غير محدد';
+            const price = document.getElementById('price').value || 'غير محدد';
+            const address = document.getElementById('address').value.trim() || 'غير محدد';
+            const notes = document.getElementById('notes').value.trim() || 'لا يوجد';
+            const selectedPackage = document.querySelector('input[name="package"]:checked')?.value || 'لا أرغب حالياً';
+
+            if (!name || !phone || !offerType || !propertyType || !governorate || !area) {
+                alert('يرجى ملء جميع الحقول الإلزامية المميزة بعلامة *');
+                return;
+            }
+
+            const message = 
+`🏛️ *تسجيل عقار جديد - SAMAHA CAPITAL*
+
+👤 *بيانات العميل*
+• الاسم: ${name}
+• الموبايل: ${phone}
+• واتساب: ${whatsapp}
+• البريد: ${email}
+• المدينة: ${city}
+
+🏠 *بيانات العقار*
+• نوع العرض: ${offerType}
+• نوع العقار: ${propertyType}
+• المحافظة: ${governorate}
+• المنطقة: ${area}
+• المساحة: ${areaSize} م²
+• الغرف: ${rooms}
+• الطابق: ${floor}
+• السعر المطلوب: ${price} جنيه
+• العنوان: ${address}
+• ملاحظات: ${notes}
+
+📦 *باقة إدارة الأملاك*
+• ${selectedPackage}
+
+---
+تم التسجيل عبر النموذج الإلكتروني`;
+
+            const encoded = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/201505494790?text=${encoded}`;
+
+            document.getElementById('successModal').classList.add('show');
+            
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+            }, 800);
+        });
+
+        function closeModal() {
+            document.getElementById('successModal').classList.remove('show');
+        }
+    </script>
+</body>
+</html>
