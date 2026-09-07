@@ -1,1 +1,239 @@
-see_file
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAMAHA CAPITAL | تسجيل العقارات وإدارة الأملاك والاستشارات القانونية</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A227;--gold-light:#E8D48B;--gold-dark:#A67C00;--card:#1C1C1C;--gray:#2A2A2A;--white:#FFF;--blue:#7EB6FF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Cairo',sans-serif;background:linear-gradient(160deg,#0A0A0A,#151515 50%,#0A0A0A);color:#fff;min-height:100vh;line-height:1.7;padding-top:70px}
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,10,10,.97);border-bottom:1px solid rgba(201,162,39,.3);backdrop-filter:blur(12px);padding:0 16px}
+.nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:62px;gap:10px}
+.nav-logo{font-size:15px;font-weight:800;color:var(--gold);white-space:nowrap}
+.nav-links{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.nav-btn{background:0 0;border:1.5px solid transparent;color:#BBB;font-family:'Cairo',sans-serif;font-size:13px;font-weight:600;padding:7px 14px;border-radius:20px;cursor:pointer}
+.nav-btn:hover,.nav-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(201,162,39,.1)}
+.nav-btn.legal-nav:hover,.nav-btn.legal-nav.active{border-color:var(--blue);color:var(--blue);background:rgba(100,160,255,.1)}
+@media(max-width:640px){.nav-logo{font-size:13px}.nav-btn{font-size:11.5px;padding:6px 10px}body{padding-top:60px}.nav-inner{height:56px}}
+.header{background:rgba(10,10,10,.97);border-bottom:1px solid rgba(201,162,39,.35);padding:28px 20px 22px;text-align:center;position:relative}
+.header::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.logo-icon{width:72px;height:72px;border:2.5px solid var(--gold);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;color:var(--gold);background:rgba(201,162,39,.12);box-shadow:0 0 30px rgba(201,162,39,.25);margin-bottom:10px}
+.company-name-ar{font-size:26px;font-weight:800;color:var(--gold)}.company-name-en{font-size:14px;font-weight:600;color:var(--gold-light);letter-spacing:3px;margin-top:2px}.tagline{font-size:12px;color:#888;margin-top:8px;letter-spacing:1px}
+.container{max-width:960px;margin:0 auto;padding:30px 18px 70px}
+.hero{text-align:center;margin-bottom:36px;padding:28px 22px;background:linear-gradient(135deg,rgba(201,162,39,.1),rgba(201,162,39,.03));border:1px solid rgba(201,162,39,.28);border-radius:18px}
+.hero h1{font-size:24px;font-weight:800;color:var(--gold);margin-bottom:10px}.hero p{font-size:14.5px;color:#BBB;max-width:720px;margin:0 auto}
+.section{background:var(--card);border:1px solid rgba(201,162,39,.22);border-radius:18px;padding:26px 22px;margin-bottom:26px;box-shadow:0 10px 40px rgba(0,0,0,.35);scroll-margin-top:80px}
+.section-title{display:flex;align-items:center;gap:12px;font-size:18px;font-weight:700;color:var(--gold);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(201,162,39,.2)}
+.section-title .icon{width:34px;height:34px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;color:#111}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:680px){.form-grid{grid-template-columns:1fr}}
+.form-group{display:flex;flex-direction:column;gap:6px}.form-group.full{grid-column:1/-1}
+label{font-size:13.5px;font-weight:600;color:var(--gold-light)}label .req{color:#FF6B6B;margin-right:2px}
+input,select,textarea{background:var(--gray);border:1.5px solid #3A3A3A;border-radius:10px;padding:12px 14px;font-family:'Cairo',sans-serif;font-size:14.5px;color:#fff;outline:0}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,39,.18)}
+input::placeholder,textarea::placeholder{color:#666}
+select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23C9A227' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left 14px center;padding-left:38px}
+textarea{resize:vertical;min-height:90px}
+.options-row{display:flex;flex-wrap:wrap;gap:10px}
+.option-card{flex:1;min-width:110px;background:var(--gray);border:1.5px solid #3A3A3A;border-radius:12px;padding:13px 10px;text-align:center;cursor:pointer;position:relative}
+.option-card:hover{border-color:var(--gold);background:rgba(201,162,39,.08)}
+.option-card input{position:absolute;opacity:0;width:0;height:0}
+.option-card.active{border-color:var(--gold);background:rgba(201,162,39,.16);box-shadow:0 0 14px rgba(201,162,39,.2)}
+.option-card .opt-label{font-size:13.5px;font-weight:600;color:#CCC}.option-card.active .opt-label{color:var(--gold)}
+.mgmt-section{background:linear-gradient(165deg,#1A1608,#1C1C1C 40%,#141414);border:1.5px solid rgba(201,162,39,.4);position:relative;overflow:hidden;scroll-margin-top:80px}
+.mgmt-section::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-dark))}
+.mgmt-badge{display:inline-block;background:rgba(201,162,39,.2);color:var(--gold);font-size:12px;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:8px}
+.mgmt-intro{text-align:center;margin-bottom:24px;color:#BBB;font-size:14px}
+.packages-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:700px){.packages-grid{grid-template-columns:1fr}}
+.package-card{background:rgba(0,0,0,.35);border:2px solid #333;border-radius:16px;padding:22px 18px;text-align:center;cursor:pointer;transition:.3s;position:relative}
+.package-card:hover{transform:translateY(-5px);border-color:var(--gold)}
+.package-card.selected{border-color:var(--gold);box-shadow:0 12px 35px rgba(201,162,39,.28);background:rgba(201,162,39,.08)}
+.package-card input{position:absolute;opacity:0}
+.pkg-tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;margin-bottom:10px}
+.pkg-tag.popular{background:rgba(201,162,39,.25);color:var(--gold)}.pkg-tag.expat{background:rgba(100,160,255,.2);color:#7EB6FF}
+.package-name{font-size:19px;font-weight:800;color:var(--gold);margin-bottom:6px}
+.package-price{font-size:28px;font-weight:800;color:#fff}.package-price span{font-size:13px;font-weight:500;color:#999;display:block;margin-top:2px}
+.package-desc{font-size:13px;color:#AAA;margin:10px 0 16px;min-height:38px}
+.package-features{list-style:none;text-align:right}.package-features li{font-size:13px;color:#DDD;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:center;gap:8px}.package-features li::before{content:'✓';color:var(--gold);font-weight:700}
+.legal-section{background:linear-gradient(165deg,#0F1A1F,#1C1C1C 50%,#141414);border:1.5px solid rgba(100,160,255,.35);position:relative;scroll-margin-top:80px}
+.legal-section::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#3A6EA5,#7EB6FF,#3A6EA5)}
+.legal-badge{display:inline-block;background:rgba(100,160,255,.18);color:#7EB6FF;font-size:12px;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:8px}
+.legal-content{font-size:14px;color:#CCC;line-height:1.85;margin-bottom:18px}.legal-content strong{color:var(--gold-light)}
+.legal-services{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}@media(max-width:600px){.legal-services{grid-template-columns:1fr}}
+.legal-item{background:rgba(0,0,0,.3);border:1px solid rgba(100,160,255,.2);border-radius:12px;padding:14px 16px;font-size:13.5px;color:#DDD;display:flex;align-items:flex-start;gap:10px}.legal-item span{color:#7EB6FF;font-weight:700;font-size:16px}
+.payment-box{background:rgba(0,0,0,.4);border:1.5px solid rgba(201,162,39,.45);border-radius:14px;padding:20px 18px;margin:22px 0 18px;text-align:center}
+.payment-box h4{color:var(--gold);font-size:16px;margin-bottom:10px}.payment-box p{color:#BBB;font-size:13.5px;margin-bottom:12px;line-height:1.7}
+.payment-number{display:inline-block;background:rgba(201,162,39,.15);border:1px solid var(--gold);color:var(--gold);font-size:20px;font-weight:800;padding:10px 22px;border-radius:12px;letter-spacing:1px;direction:ltr;margin:8px 0 12px}
+.payment-methods{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:8px}.payment-methods span{background:var(--gray);border:1px solid #444;border-radius:8px;padding:6px 14px;font-size:12.5px;color:#DDD}
+.terms-box{background:rgba(0,0,0,.3);border:1px solid #333;border-radius:12px;padding:16px 18px;max-height:180px;overflow-y:auto;font-size:13px;color:#BBB;margin-bottom:16px;line-height:1.8}
+.terms-box h4{color:var(--gold);margin:10px 0 6px;font-size:14px}.terms-box ul{padding-right:18px;margin-bottom:8px}.terms-box li{margin-bottom:4px}
+.check-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:13.5px;color:#CCC;cursor:pointer}
+.check-row input{width:18px;height:18px;margin-top:3px;accent-color:var(--gold);cursor:pointer;flex-shrink:0}
+.submit-area{text-align:center;margin-top:10px}
+.submit-btn{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#111;border:none;border-radius:14px;padding:16px 42px;font-family:'Cairo',sans-serif;font-size:16px;font-weight:800;cursor:pointer;box-shadow:0 8px 28px rgba(201,162,39,.35);display:inline-flex;align-items:center;gap:10px}
+.submit-btn:hover{transform:translateY(-3px)}.submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.submit-btn.secondary{background:0 0;border:2px solid var(--gold);color:var(--gold);box-shadow:none;margin-top:12px}
+.submit-btn.legal-btn{background:0 0;border:2px solid #7EB6FF;color:#7EB6FF;box-shadow:none}
+.note{margin-top:14px;font-size:12.5px;color:#888}.note strong{color:var(--gold)}
+.footer{text-align:center;padding:28px 20px;border-top:1px solid rgba(201,162,39,.15);margin-top:10px}
+.footer a{color:var(--gold);text-decoration:none;direction:ltr}.footer-copy{font-size:12px;color:#666;margin-top:6px}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:2000;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.show{display:flex}.modal{background:var(--card);border:2px solid var(--gold);border-radius:18px;padding:32px 26px;max-width:400px;width:100%;text-align:center}
+.modal h3{color:var(--gold);font-size:20px;margin-bottom:10px}.modal p{color:#CCC;font-size:14px;margin-bottom:22px}
+.modal-btn{background:var(--gold);color:#111;border:none;border-radius:10px;padding:11px 28px;font-family:'Cairo',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+.section-separator{text-align:center;margin:50px 0 30px;position:relative}
+.section-separator span{background:#0A0A0A;padding:0 18px;color:#666;font-size:12px;letter-spacing:2px;position:relative;z-index:1}
+.section-separator::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,162,39,.25),transparent)}
+</style>
+</head>
+<body>
+<nav class="top-nav"><div class="nav-inner"><div class="nav-logo">SAMAHA CAPITAL</div><div class="nav-links">
+<button class="nav-btn active" onclick="scrollToSection('section-property')">تسجيل عقار</button>
+<button class="nav-btn" onclick="scrollToSection('section-mgmt')">إدارة أملاك</button>
+<button class="nav-btn legal-nav" onclick="scrollToSection('section-legal')">استشارات قانونية</button>
+</div></div></nav>
+<header class="header"><div class="logo-icon">S</div><div class="company-name-ar">سماحة كابيتال</div><div class="company-name-en">SAMAHA CAPITAL</div><div class="tagline">INVESTMENT • TECHNOLOGY • CONSULTING • REAL ESTATE</div></header>
+<div class="container">
+<div id="section-property">
+<div class="hero"><h1>نموذج تسجيل العقارات</h1><p>سجّل عقارك للبيع أو الإيجار بسهولة تامة. النموذج مصمم ليخدم جميع فئات العملاء في السوق المصري بدقة واحترافية عالية.</p></div>
+<form id="propertyForm">
+<div class="section"><div class="section-title"><div class="icon">👤</div> بيانات العميل</div>
+<div class="form-grid">
+<div class="form-group"><label><span class="req">*</span> الاسم الكامل</label><input type="text" id="clientName" placeholder="مثال: أحمد محمد علي" required></div>
+<div class="form-group"><label><span class="req">*</span> رقم الموبايل</label><input type="tel" id="clientPhone" placeholder="01xxxxxxxxx" required></div>
+<div class="form-group"><label>رقم واتساب (إن اختلف)</label><input type="tel" id="clientWhatsapp" placeholder="01xxxxxxxxx"></div>
+<div class="form-group"><label>البريد الإلكتروني</label><input type="email" id="clientEmail" placeholder="example@email.com"></div>
+<div class="form-group full"><label>المدينة / المنطقة الحالية</label><input type="text" id="clientCity" placeholder="مثال: القاهرة - مدينة نصر"></div>
+</div></div>
+<div class="section"><div class="section-title"><div class="icon">🏠</div> بيانات العقار</div>
+<div class="form-group" style="margin-bottom:18px"><label><span class="req">*</span> نوع العرض</label>
+<div class="options-row" id="offerTypeOptions">
+<label class="option-card"><input type="radio" name="offerType" value="بيع" required><div class="opt-label">بيع</div></label>
+<label class="option-card"><input type="radio" name="offerType" value="إيجار"><div class="opt-label">إيجار</div></label>
+<label class="option-card"><input type="radio" name="offerType" value="بيع أو إيجار"><div class="opt-label">بيع أو إيجار</div></label>
+</div></div>
+<div class="form-group" style="margin-bottom:18px"><label><span class="req">*</span> نوع العقار</label>
+<div class="options-row" id="propertyTypeOptions">
+<label class="option-card"><input type="radio" name="propertyType" value="شقة" required><div class="opt-label">شقة</div></label>
+<label class="option-card"><input type="radio" name="propertyType" value="فيلا"><div class="opt-label">فيلا</div></label>
+<label class="option-card"><input type="radio" name="propertyType" value="أرض"><div class="opt-label">أرض</div></label>
+<label class="option-card"><input type="radio" name="propertyType" value="محل تجاري"><div class="opt-label">محل</div></label>
+<label class="option-card"><input type="radio" name="propertyType" value="مكتب إداري"><div class="opt-label">مكتب</div></label>
+<label class="option-card"><input type="radio" name="propertyType" value="أخرى"><div class="opt-label">أخرى</div></label>
+</div></div>
+<div class="form-grid">
+<div class="form-group"><label><span class="req">*</span> المحافظة</label><select id="governorate" required><option value="">اختر المحافظة</option><option value="القاهرة">القاهرة</option><option value="الجيزة">الجيزة</option><option value="الإسكندرية">الإسكندرية</option><option value="القليوبية">القليوبية</option><option value="الشرقية">الشرقية</option><option value="الدقهلية">الدقهلية</option><option value="البحيرة">البحيرة</option><option value="المنوفية">المنوفية</option><option value="الغربية">الغربية</option><option value="كفر الشيخ">كفر الشيخ</option><option value="دمياط">دمياط</option><option value="بورسعيد">بورسعيد</option><option value="الإسماعيلية">الإسماعيلية</option><option value="السويس">السويس</option><option value="شمال سيناء">شمال سيناء</option><option value="جنوب سيناء">جنوب سيناء</option><option value="الفيوم">الفيوم</option><option value="بني سويف">بني سويف</option><option value="المنيا">المنيا</option><option value="أسيوط">أسيوط</option><option value="سوهاج">سوهاج</option><option value="قنا">قنا</option><option value="الأقصر">الأقصر</option><option value="أسوان">أسوان</option><option value="البحر الأحمر">البحر الأحمر</option><option value="الوادي الجديد">الوادي الجديد</option><option value="مطروح">مطروح</option></select></div>
+<div class="form-group"><label><span class="req">*</span> المنطقة / الحي</label><input type="text" id="area" placeholder="مثال: التجمع الخامس" required></div>
+<div class="form-group"><label>المساحة (م²)</label><input type="number" id="areaSize" placeholder="150" min="1"></div>
+<div class="form-group"><label>عدد الغرف</label><select id="rooms"><option value="">اختر</option><option value="استوديو">استوديو</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6+">6+</option></select></div>
+<div class="form-group"><label>الطابق</label><input type="text" id="floor" placeholder="الثالث / أرضي / روف"></div>
+<div class="form-group"><label>السعر / الإيجار المطلوب (جنيه)</label><input type="number" id="price" placeholder="2500000 أو الإيجار الشهري" min="0"></div>
+<div class="form-group full"><label>العنوان التفصيلي</label><input type="text" id="address" placeholder="الشارع - رقم العمارة - علامة مميزة"></div>
+<div class="form-group full"><label>ملاحظات إضافية</label><textarea id="notes" placeholder="التشطيب، الجراج، الخدمات القريبة، حالة الأوراق..."></textarea></div>
+</div></div>
+<div class="section"><div class="section-title"><div class="icon">📋</div> تأكيد البيانات والشروط</div>
+<div class="terms-box"><h4>إقرار بصحة البيانات</h4><p>أقر أنا الموقع أدناه بأن جميع البيانات المدخلة عن العقار صحيحة ودقيقة حسب علمي، وأتحمل المسؤولية الكاملة عن أي معلومات غير صحيحة.</p><h4>شروط التسجيل</h4><ul><li>التسجيل مجاني ولا يلزمك بأي رسوم إلا عند الاتفاق على خدمة محددة.</li><li>يحق لسماحة كابيتال التحقق من صحة البيانات قبل البدء في أي إجراءات.</li><li>البيانات المقدمة تُعامل بسرية تامة ولا تُشارك مع أطراف ثالثة دون موافقتك.</li><li>التواصل يتم عبر الأرقام الرسمية للشركة فقط.</li></ul></div>
+<label class="check-row"><input type="checkbox" id="confirmData" required><span>أؤكد أن بيانات العقار المقدمة صحيحة وكاملة حسب علمي <span class="req">*</span></span></label>
+<label class="check-row"><input type="checkbox" id="acceptTerms" required><span>أوافق على شروط التسجيل وإقرار صحة البيانات <span class="req">*</span></span></label>
+<div class="submit-area"><button type="submit" class="submit-btn" id="propSubmitBtn">إرسال تسجيل العقار عبر واتساب 📱</button>
+<p class="note">سيتم الحفظ تلقائياً + الإرسال إلى إدارة العقارات: <strong>01505494790</strong></p></div></div>
+</form></div>
+<div class="section-separator"><span>إدارة الأملاك</span></div>
+<div id="section-mgmt">
+<div class="hero" style="background:linear-gradient(135deg,rgba(201,162,39,.14),rgba(100,140,255,.06))"><div class="mgmt-badge">خدمة احترافية</div><h1>إدارة الأملاك</h1><p>خدمة متخصصة لأصحاب العقارات داخل مصر وللمغتربين بالخارج. نُدير أملاكك بنسبة من الإيجار فقط — بدون مبالغ ثابتة.</p></div>
+<div class="section mgmt-section"><div class="section-title"><div class="icon">🏢</div> باقات إدارة الأملاك</div>
+<p class="mgmt-intro">باقتان وفق أفضل ممارسات السوق المصري (5–10% من الإيجار). النسبة من الإيجار الشهري المحصّل فقط.</p>
+<div class="packages-grid">
+<label class="package-card" id="pkgSmart"><input type="radio" name="mgmtPackage" value="باقة الإدارة الذكية - 7%"><div class="pkg-tag popular">الأكثر اختياراً</div><div class="package-name">باقة الإدارة الذكية</div><div class="package-price">7% <span>من الإيجار الشهري</span></div><div class="package-desc">لأصحاب عقار أو عقارين داخل مصر<br>الطبقة المتوسطة والعليا</div><ul class="package-features"><li>عرض وتسويق العقار باحتراف</li><li>متابعة المستأجرين والتحصيل</li><li>تقارير شهرية واضحة</li><li>متابعة الصيانة الدورية</li><li>دعم واتساب سريع</li><li>تصوير وتوثيق حالة العقار</li></ul></label>
+<label class="package-card" id="pkgExpat"><input type="radio" name="mgmtPackage" value="باقة المغترب بلس - 9%"><div class="pkg-tag expat">للمغتربين</div><div class="package-name">باقة المغترب بلس</div><div class="package-price">9% <span>من الإيجار الشهري</span></div><div class="package-desc">للإخوة المغتربين بالخارج<br>إدارة كاملة عن بُعد بثقة عالية</div><ul class="package-features"><li>كل مميزات الإدارة الذكية</li><li>تقارير بالعربي والإنجليزي</li><li>متابعة قانونية وإيجار</li><li>تصوير فيديو دوري للعقار</li><li>تواصل مباشر مع المالك أينما كان</li><li>أولوية في الاستجابة والدعم</li></ul></label>
+</div>
+<div style="margin-top:20px;text-align:center"><label class="option-card" style="display:inline-block;min-width:220px" id="pkgNone"><input type="radio" name="mgmtPackage" value="لا أرغب حالياً" checked><div class="opt-label">لا أرغب في باقة حالياً</div></label></div>
+<div style="margin-top:28px;border-top:1px solid rgba(201,162,39,.2);padding-top:22px"><div class="form-grid">
+<div class="form-group"><label>هل أنت مغترب خارج مصر؟</label><select id="isExpat"><option value="لا">لا - مقيم في مصر</option><option value="نعم">نعم - مغترب بالخارج</option></select></div>
+<div class="form-group"><label>دولة الإقامة (إن كنت مغترباً)</label><input type="text" id="expatCountry" placeholder="مثال: السعودية / الإمارات / ألمانيا"></div>
+<div class="form-group full"><label>ملاحظات خاصة بطلب الإدارة</label><textarea id="mgmtNotes" placeholder="عدد العقارات، الإيجار التقريبي، أي تفاصيل إضافية..."></textarea></div>
+</div></div>
+<div class="payment-box"><h4>بيانات الدفع</h4><p>بعد الاتفاق على الباقة، يتم سداد النسبة المتفق عليها من الإيجار عبر:</p><div class="payment-number">01016105658</div><div class="payment-methods"><span>InstaPay</span><span>Vodafone Cash</span></div><p style="margin-top:14px;font-size:12.5px;color:#999">بعد التحويل، أرسل صورة الإيصال عبر واتساب على نفس الرقم مع رقم الطلب.</p></div>
+<div class="form-group full" style="margin-bottom:16px"><label>رقم عملية التحويل (إن وُجد)</label><input type="text" id="paymentRef" placeholder="اختياري — رقم العملية أو آخر 4 أرقام"></div>
+<div style="margin-top:24px"><div class="section-title" style="font-size:16px"><div class="icon" style="width:28px;height:28px;font-size:14px">📜</div> شروط الاشتراك</div>
+<div class="terms-box"><h4>بنود الاشتراك</h4><ul><li>تُحسب أتعاب الإدارة بنسبة من قيمة الإيجار الشهري المحصّل فعلياً فقط (لا تُفرض في حالة الشغور).</li><li>يبدأ العمل بعد استلام المستندات اللازمة والتأكيد الكتابي من الطرفين.</li><li>الشركة ملتزمة بالحفاظ على سرية بيانات العميل والعقار.</li><li>في حالة المغتربين: تُرسل تقارير دورية عبر البريد وواتساب.</li><li>أي مصروفات صيانة أو رسوم حكومية على حساب المالك بعد موافقته المسبقة.</li><li>يحق لأي طرف إنهاء الخدمة مع إشعار مسبق بـ 15 يوماً.</li></ul></div>
+<label class="check-row"><input type="checkbox" id="acceptMgmtTerms"><span>أوافق على شروط وبنود الاشتراك في خدمة إدارة الأملاك</span></label></div>
+<div class="submit-area" style="margin-top:22px"><button type="button" class="submit-btn secondary" id="mgmtSubmitBtn">طلب باقة إدارة الأملاك عبر واتساب 📱</button>
+<p class="note">يُحفظ الطلب تلقائياً + يُرسل إلى قسم إدارة الأملاك: <strong>01016105658</strong></p></div></div></div>
+<div class="section-separator"><span>الاستشارات القانونية</span></div>
+<div id="section-legal">
+<div class="hero" style="background:linear-gradient(135deg,rgba(100,160,255,.12),rgba(201,162,39,.05))"><div class="legal-badge">قيمة مضافة حصرية</div><h1>الاستشارات القانونية العقارية</h1><p>بالتعاون مع <strong style="color:#E8D48B">مؤسسة سماحة القانونية</strong> — حماية قانونية متكاملة لعقاراتك وعقودك.</p></div>
+<div class="section legal-section"><div class="section-title"><div class="icon">⚖️</div> خدمات مؤسسة سماحة القانونية</div>
+<div class="legal-content">تقدّم <strong>سماحة كابيتال</strong> بالتعاون مع <strong>مؤسسة سماحة القانونية</strong> باقة متكاملة من الخدمات القانونية العقارية، لضمان حماية حقوقك وتوثيق معاملاتك وفق أعلى المعايير المهنية والقانونية في جمهورية مصر العربية.</div>
+<div class="legal-services">
+<div class="legal-item"><span>①</span> استشارات قانونية عقارية متخصصة (بيع – إيجار – تمليك – نزاعات)</div>
+<div class="legal-item"><span>②</span> مراجعة وصياغة عقود البيع والإيجار والتمويل العقاري</div>
+<div class="legal-item"><span>③</span> فحص الملكية والسجلات العقارية والتأكد من سلامة الأوراق</div>
+<div class="legal-item"><span>④</span> إجراءات التسجيل والشهر العقاري والتوثيق</div>
+<div class="legal-item"><span>⑤</span> متابعة النزاعات العقارية وتمثيل العميل قانونياً عند الحاجة</div>
+<div class="legal-item"><span>⑥</span> استشارات للمغتربين بشأن إدارة وحماية أملاكهم في مصر</div>
+</div>
+<div class="legal-content" style="margin-top:8px;font-size:13.5px;color:#AAA">جميع الاستشارات والأعمال القانونية تتم تحت إشراف محامين متخصصين في الشأن العقاري، مع الالتزام التام بسرية المعلومات وحقوق العميل.</div>
+<div class="submit-area" style="margin-top:20px"><button type="button" class="submit-btn legal-btn" id="legalSubmitBtn">طلب استشارة قانونية عقارية عبر واتساب ⚖️</button>
+<p class="note">يُحفظ الطلب تلقائياً + يُرسل إلى قسم الاستشارات القانونية: <strong style="color:#7EB6FF">01093960453</strong></p></div></div></div>
+</div>
+<footer class="footer">
+<div>إدارة العقارات: <a href="https://wa.me/201505494790" target="_blank">01505494790</a></div>
+<div style="margin-top:6px">إدارة الأملاك: <a href="https://wa.me/201016105658" target="_blank">01016105658</a></div>
+<div style="margin-top:6px">الاستشارات القانونية: <a href="https://wa.me/201093960453" target="_blank" style="color:#7EB6FF">01093960453</a></div>
+<div class="footer-copy">© 2026 SAMAHA CAPITAL — بالتعاون مع مؤسسة سماحة القانونية<br>Investment • Technology • Consulting • Real Estate</div>
+</footer>
+<div class="modal-overlay" id="successModal"><div class="modal"><h3 id="modalTitle">تم الحفظ بنجاح ✓</h3><p id="modalMsg">سيتم فتح واتساب الآن. اضغط "إرسال" داخل واتساب لإكمال الطلب.</p><button class="modal-btn" onclick="document.getElementById('successModal').classList.remove('show')">حسناً</button></div></div>
+<script>
+const SHEETS_URL="https://script.google.com/macros/s/AKfycbzfFT0bUZH6aGyXCWtrlFKfn4YrhEEFLMbkl62-x7CCQYcTU93j0AcvFQBhwabbdXwpIg/exec";
+async function saveToSheet(payload){try{await fetch(SHEETS_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)});return{success:true,id:"SC-"+Date.now().toString().slice(-6)}}catch(err){return{success:false,id:"SC-"+Date.now().toString().slice(-6)}}}
+function scrollToSection(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));if(event&&event.target)event.target.classList.add('active')}
+const sections=['section-property','section-mgmt','section-legal'];const navBtns=document.querySelectorAll('.nav-btn');
+window.addEventListener('scroll',()=>{let current='';sections.forEach(id=>{const sec=document.getElementById(id);if(sec&&window.scrollY>=sec.offsetTop-120)current=id});navBtns.forEach((btn,i)=>{btn.classList.toggle('active',sections[i]===current)})});
+function setupCards(containerId){const container=document.getElementById(containerId);if(!container)return;container.querySelectorAll('.option-card').forEach(card=>{card.addEventListener('click',function(){container.querySelectorAll('.option-card').forEach(c=>c.classList.remove('active'));this.classList.add('active');this.querySelector('input').checked=true})})}
+setupCards('offerTypeOptions');setupCards('propertyTypeOptions');
+document.querySelectorAll('.package-card, #pkgNone').forEach(pkg=>{pkg.addEventListener('click',function(){document.querySelectorAll('.package-card, #pkgNone').forEach(p=>p.classList.remove('selected','active'));this.classList.add(this.id==='pkgNone'?'active':'selected');this.querySelector('input').checked=true})});
+document.getElementById('propertyForm').addEventListener('submit',async function(e){e.preventDefault();
+if(!document.getElementById('confirmData').checked||!document.getElementById('acceptTerms').checked){alert('يرجى تأكيد صحة البيانات والموافقة على الشروط');return}
+const name=document.getElementById('clientName').value.trim();const phone=document.getElementById('clientPhone').value.trim();
+const whatsapp=document.getElementById('clientWhatsapp').value.trim()||phone;const email=document.getElementById('clientEmail').value.trim()||'';
+const city=document.getElementById('clientCity').value.trim()||'';const offerType=document.querySelector('input[name="offerType"]:checked')?.value||'';
+const propertyType=document.querySelector('input[name="propertyType"]:checked')?.value||'';const governorate=document.getElementById('governorate').value;
+const area=document.getElementById('area').value.trim();const areaSize=document.getElementById('areaSize').value||'';
+const rooms=document.getElementById('rooms').value||'';const floor=document.getElementById('floor').value.trim()||'';
+const price=document.getElementById('price').value||'';const address=document.getElementById('address').value.trim()||'';const notes=document.getElementById('notes').value.trim()||'';
+if(!name||!phone||!offerType||!propertyType||!governorate||!area){alert('يرجى ملء جميع الحقول الإلزامية');return}
+const btn=document.getElementById('propSubmitBtn');btn.disabled=true;btn.textContent='جاري الحفظ...';
+const payload={type:"تسجيل عقار",name,phone,whatsapp,email,city,offerType,propertyType,governorate,area,areaSize,rooms,floor,price,address,notes,package:"",isExpat:"",expatCountry:"",mgmtNotes:""};
+const result=await saveToSheet(payload);const reqId=result.id||("SC-"+Date.now().toString().slice(-6));
+const msg=`🏛️ *تسجيل عقار جديد - SAMAHA CAPITAL*\n📋 رقم الطلب: *${reqId}*\n\n👤 *بيانات العميل*\n• الاسم: ${name}\n• الموبايل: ${phone}\n• واتساب: ${whatsapp}\n• البريد: ${email||'غير محدد'}\n• المدينة: ${city||'غير محدد'}\n\n🏠 *بيانات العقار*\n• نوع العرض: ${offerType}\n• نوع العقار: ${propertyType}\n• المحافظة: ${governorate}\n• المنطقة: ${area}\n• المساحة: ${areaSize||'غير محدد'} م²\n• الغرف: ${rooms||'غير محدد'}\n• الطابق: ${floor||'غير محدد'}\n• السعر/الإيجار: ${price||'غير محدد'} جنيه\n• العنوان: ${address||'غير محدد'}\n• ملاحظات: ${notes||'لا يوجد'}\n\n✅ تم تأكيد صحة البيانات والموافقة على الشروط\n✅ تم الحفظ في النظام\n\n---\nتم التسجيل عبر النموذج الإلكتروني`;
+document.getElementById('modalTitle').textContent='تم الحفظ بنجاح ✓';document.getElementById('modalMsg').textContent='رقم الطلب: '+reqId+' — سيتم فتح واتساب الآن.';
+document.getElementById('successModal').classList.add('show');
+setTimeout(()=>{window.open(`https://wa.me/201505494790?text=${encodeURIComponent(msg)}`,'_blank');btn.disabled=false;btn.textContent='إرسال تسجيل العقار عبر واتساب 📱'},800)});
+document.getElementById('mgmtSubmitBtn').addEventListener('click',async function(){
+const selected=document.querySelector('input[name="mgmtPackage"]:checked')?.value||'لا أرغب حالياً';
+if(selected==='لا أرغب حالياً'){alert('يرجى اختيار إحدى الباقات أولاً');return}
+if(!document.getElementById('acceptMgmtTerms').checked){alert('يرجى الموافقة على شروط الاشتراك');return}
+const name=document.getElementById('clientName').value.trim()||'لم يُحدد بعد';const phone=document.getElementById('clientPhone').value.trim()||'لم يُحدد بعد';
+const isExpat=document.getElementById('isExpat').value;const country=document.getElementById('expatCountry').value.trim()||'';
+const notes=document.getElementById('mgmtNotes').value.trim()||'';const paymentRef=document.getElementById('paymentRef')?.value.trim()||'';
+const btn=this;btn.disabled=true;btn.textContent='جاري الحفظ...';
+const payload={type:"إدارة أملاك",name,phone,whatsapp:phone,email:document.getElementById('clientEmail').value.trim()||'',city:document.getElementById('clientCity').value.trim()||'',offerType:"",propertyType:"",governorate:"",area:"",areaSize:"",rooms:"",floor:"",price:"",address:"",notes:"",package:selected,isExpat,expatCountry:country,mgmtNotes:notes,paymentRef};
+const result=await saveToSheet(payload);const reqId=result.id||("SC-"+Date.now().toString().slice(-6));
+const msg=`🏢 *طلب باقة إدارة أملاك - SAMAHA CAPITAL*\n📋 رقم الطلب: *${reqId}*\n\n📦 *الباقة المختارة:* ${selected}\n\n👤 *بيانات التواصل*\n• الاسم: ${name}\n• الموبايل: ${phone}\n\n🌍 *حالة الإقامة*\n• مغترب؟ ${isExpat}\n• دولة الإقامة: ${country||'غير محدد'}\n\n📝 *ملاحظات:* ${notes||'لا يوجد'}\n💳 *رقم التحويل:* ${paymentRef||'لم يُحدد بعد'}\n\n✅ تمت الموافقة على شروط الاشتراك\n✅ تم الحفظ في النظام\n(النسبة من الإيجار الشهري المحصّل فقط)\n\n---\nتم الطلب عبر النموذج الإلكتروني - قسم إدارة الأملاك`;
+document.getElementById('modalTitle').textContent='تم الحفظ بنجاح ✓';document.getElementById('modalMsg').textContent='رقم الطلب: '+reqId+' — سيتم فتح واتساب الآن.';
+document.getElementById('successModal').classList.add('show');
+setTimeout(()=>{window.open(`https://wa.me/201016105658?text=${encodeURIComponent(msg)}`,'_blank');btn.disabled=false;btn.textContent='طلب باقة إدارة الأملاك عبر واتساب 📱'},800)});
+document.getElementById('legalSubmitBtn').addEventListener('click',async function(){
+const name=document.getElementById('clientName').value.trim()||'لم يُحدد بعد';const phone=document.getElementById('clientPhone').value.trim()||'لم يُحدد بعد';
+const btn=this;btn.disabled=true;btn.textContent='جاري الحفظ...';
+const payload={type:"استشارة قانونية",name,phone,whatsapp:phone,email:document.getElementById('clientEmail').value.trim()||'',city:document.getElementById('clientCity').value.trim()||'',offerType:"",propertyType:"",governorate:"",area:"",areaSize:"",rooms:"",floor:"",price:"",address:"",notes:"",package:"",isExpat:"",expatCountry:"",mgmtNotes:""};
+const result=await saveToSheet(payload);const reqId=result.id||("SC-"+Date.now().toString().slice(-6));
+const msg=`⚖️ *طلب استشارة قانونية عقارية - SAMAHA CAPITAL*\n📋 رقم الطلب: *${reqId}*\n\nبالتعاون مع مؤسسة سماحة القانونية\n\n👤 *بيانات التواصل*\n• الاسم: ${name}\n• الموبايل: ${phone}\n\nأرغب في الحصول على استشارة قانونية عقارية (مراجعة عقود / فحص ملكية / استشارات / إجراءات تسجيل...).\n\nيرجى التواصل معي في أقرب وقت.\n\n✅ تم الحفظ في النظام\n\n---\nتم الطلب عبر النموذج الإلكتروني`;
+document.getElementById('modalTitle').textContent='تم الحفظ بنجاح ✓';document.getElementById('modalMsg').textContent='رقم الطلب: '+reqId+' — سيتم فتح واتساب الآن.';
+document.getElementById('successModal').classList.add('show');
+setTimeout(()=>{window.open(`https://wa.me/201093960453?text=${encodeURIComponent(msg)}`,'_blank');btn.disabled=false;btn.textContent='طلب استشارة قانونية عقارية عبر واتساب ⚖️'},800)});
+</script>
+</body>
+</html>
