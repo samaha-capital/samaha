@@ -324,7 +324,7 @@
             document.getElementById('loading').classList.add('hidden');
             document.getElementById('errorBox').classList.remove('hidden');
             document.getElementById('errorBox').textContent =
-                'تعذر تحميل البيانات. تأكد من نشر الـ Web App كـ New version بعد إضافة doGet، وأن Who has access = Anyone. التفاصيل: ' + err.message;
+                'تعذر تحميل البيانات. التفاصيل: ' + err.message;
         }
     }
 
@@ -357,7 +357,7 @@
     }
 
     function typeBadge(type) {
-        const t = type || '';
+        const t = String(type || '');
         if (t.includes('أملاك') || t.includes('إدارة')) return '<span class="badge mgmt">إدارة أملاك</span>';
         if (t.includes('قانونية') || t.includes('استشارة')) return '<span class="badge legal">استشارة قانونية</span>';
         return '<span class="badge prop">تسجيل عقار</span>';
@@ -383,13 +383,13 @@
             const id = getVal(r, 'Request ID', 'id');
 
             if (typeF) {
-                if (typeF === 'تسجيل عقار' && !type.includes('عقار')) return false;
-                if (typeF === 'إدارة أملاك' && !type.includes('أملاك')) return false;
-                if (typeF === 'استشارة قانونية' && !type.includes('قانونية') && !type.includes('استشارة')) return false;
+                if (typeF === 'تسجيل عقار' && !String(type).includes('عقار')) return false;
+                if (typeF === 'إدارة أملاك' && !String(type).includes('أملاك')) return false;
+                if (typeF === 'استشارة قانونية' && !String(type).includes('قانونية') && !String(type).includes('استشارة')) return false;
             }
             if (statusF && status !== statusF) return false;
             if (q) {
-                const hay = (id + ' ' + name + ' ' + phone + ' ' + type).toLowerCase();
+                const hay = (String(id) + ' ' + String(name) + ' ' + String(phone) + ' ' + String(type)).toLowerCase();
                 if (!hay.includes(q)) return false;
             }
             return true;
@@ -437,7 +437,8 @@
             if (city) details += `المدينة: ${city}<br>`;
             if (notes) details += `ملاحظات: ${notes}`;
 
-            const wa = phone ? `<a class="wa-link" href="https://wa.me/2${phone.replace(/^0/, '')}" target="_blank">${phone}</a>` : '—';
+            const phoneStr = String(phone == null ? '' : phone).trim();
+            const wa = phoneStr ? `<a class="wa-link" href="https://wa.me/2${phoneStr.replace(/^0/, '')}" target="_blank">${phoneStr}</a>` : '—';
 
             return `
                 <tr>
