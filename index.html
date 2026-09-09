@@ -3,87 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SAMAHA CAPITAL | تسجيل العقارات وإدارة الأملاك</title>
+<title>SAMAHA CAPITAL | Investment • Technology • Consulting • Real Estate</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--gold:#C9A227;--gold-l:#E8D48B;--gold-d:#A67C00;--bg:#0B0B0B;--card:#161616;--gray:#222;--line:#333;--txt:#EEE;--muted:#999;--blue:#7EB6FF;--ok:#25D366}
+:root{--gold:#C9A227;--gold-l:#E8D48B;--gold-d:#A67C00;--bg:#0A0A0A;--card:#141414;--gray:#1F1F1F;--line:#333;--txt:#F0F0F0;--muted:#999;--blue:#7EB6FF;--teal:#4ECDC4;--purple:#B794F4;--orange:#F6AD55}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);line-height:1.7;padding-top:64px}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);line-height:1.7;padding-top:62px}
 a{color:var(--gold);text-decoration:none}
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,11,11,.96);border-bottom:1px solid rgba(201,162,39,.35);backdrop-filter:blur(10px)}
-.nav-in{max-width:900px;margin:0 auto;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;gap:8px}
-.brand{font-weight:800;color:var(--gold);font-size:15px}
-.nav-links{display:flex;gap:6px;flex-wrap:wrap}
-.nav-links button{background:0;border:1px solid transparent;color:#BBB;font:600 12.5px Cairo;padding:6px 12px;border-radius:18px;cursor:pointer}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,.97);border-bottom:1px solid rgba(201,162,39,.35);backdrop-filter:blur(12px)}
+.nav-in{max-width:980px;margin:0 auto;min-height:58px;display:flex;align-items:center;justify-content:space-between;padding:8px 12px;gap:8px;flex-wrap:wrap}
+.brand{font-weight:800;color:var(--gold);font-size:14px;white-space:nowrap}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.nav-links button{background:0;border:1px solid transparent;color:#AAA;font:600 11.5px Cairo;padding:5px 10px;border-radius:16px;cursor:pointer}
 .nav-links button:hover,.nav-links button.on{border-color:var(--gold);color:var(--gold);background:rgba(201,162,39,.1)}
-.header{text-align:center;padding:28px 16px 18px;border-bottom:1px solid rgba(201,162,39,.25);position:relative}
+.header{text-align:center;padding:26px 14px 16px;border-bottom:1px solid rgba(201,162,39,.22);position:relative}
 .header:before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
-.logo{width:68px;height:68px;margin:0 auto 10px;border:2.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 28px Cairo;color:var(--gold);background:rgba(201,162,39,.12);box-shadow:0 0 24px rgba(201,162,39,.2)}
-.h-ar{font:800 24px Cairo;color:var(--gold)}.h-en{font:600 13px Cairo;color:var(--gold-l);letter-spacing:2px}.tag{font-size:12px;color:#777;margin-top:6px}
-.wrap{max-width:900px;margin:0 auto;padding:24px 14px 60px}
-.hero{text-align:center;padding:22px 16px;margin-bottom:22px;border:1px solid rgba(201,162,39,.28);border-radius:16px;background:linear-gradient(135deg,rgba(201,162,39,.1),rgba(201,162,39,.03))}
-.hero h1{font:800 22px Cairo;color:var(--gold);margin-bottom:8px}.hero p{font-size:14px;color:#BBB}
-.card{background:var(--card);border:1px solid rgba(201,162,39,.2);border-radius:16px;padding:20px 16px;margin-bottom:20px;scroll-margin-top:80px}
-.card h2{display:flex;align-items:center;gap:10px;font:700 17px Cairo;color:var(--gold);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(201,162,39,.18)}
-.icon{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#111;display:flex;align-items:center;justify-content:center;font-size:14px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(max-width:640px){.grid{grid-template-columns:1fr}.nav-links button{font-size:11px;padding:5px 8px}}
-.fg{display:flex;flex-direction:column;gap:5px}.fg.full{grid-column:1/-1}
-label{font:600 13px Cairo;color:var(--gold-l)}.req{color:#FF6B6B}
-input,select,textarea{background:var(--gray);border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;font:14px Cairo;color:#fff;outline:0}
+.logo{width:64px;height:64px;margin:0 auto 8px;border:2.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 26px Cairo;color:var(--gold);background:rgba(201,162,39,.12);box-shadow:0 0 22px rgba(201,162,39,.22)}
+.h-ar{font:800 22px Cairo;color:var(--gold)}.h-en{font:600 12px Cairo;color:var(--gold-l);letter-spacing:2px;margin-top:2px}
+.tag{font-size:11px;color:#777;margin-top:6px;letter-spacing:.5px}
+.wrap{max-width:980px;margin:0 auto;padding:20px 12px 50px}
+.hero{text-align:center;padding:18px 14px;margin-bottom:18px;border:1px solid rgba(201,162,39,.25);border-radius:14px;background:linear-gradient(135deg,rgba(201,162,39,.09),rgba(201,162,39,.02))}
+.hero h1{font:800 20px Cairo;color:var(--gold);margin-bottom:6px}.hero p{font-size:13.5px;color:#BBB}
+.hero .en{font-size:12px;color:#888;margin-top:4px}
+.card{background:var(--card);border:1px solid rgba(201,162,39,.18);border-radius:14px;padding:18px 14px;margin-bottom:16px;scroll-margin-top:75px}
+.card h2{display:flex;align-items:center;gap:8px;font:700 15px Cairo;color:var(--gold);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(201,162,39,.15)}
+.icon{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#111;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:680px){.grid{grid-template-columns:1fr}.nav-links button{font-size:10.5px;padding:4px 7px}}
+.fg{display:flex;flex-direction:column;gap:4px}.fg.full{grid-column:1/-1}
+label{font:600 12.5px Cairo;color:var(--gold-l)}.req{color:#FF6B6B}
+input,select,textarea{background:var(--gray);border:1.5px solid var(--line);border-radius:9px;padding:10px 11px;font:13.5px Cairo;color:#fff;outline:0}
 input:focus,select:focus,textarea:focus{border-color:var(--gold)}
-textarea{min-height:80px;resize:vertical}
-.opts{display:flex;flex-wrap:wrap;gap:8px}
-.opt{flex:1;min-width:95px;text-align:center;padding:12px 8px;border:1.5px solid var(--line);border-radius:12px;background:var(--gray);cursor:pointer;position:relative}
+textarea{min-height:72px;resize:vertical}
+.opts{display:flex;flex-wrap:wrap;gap:7px}
+.opt{flex:1;min-width:88px;text-align:center;padding:10px 6px;border:1.5px solid var(--line);border-radius:10px;background:var(--gray);cursor:pointer;position:relative}
 .opt input{position:absolute;opacity:0;width:0;height:0}
-.opt span{font:600 13px Cairo;color:#CCC}
-.opt.on,.opt:has(input:checked){border-color:var(--gold);background:rgba(201,162,39,.15)}
-.opt.on span,.opt:has(input:checked) span{color:var(--gold)}
-.sep{text-align:center;margin:36px 0 18px;position:relative;color:#666;font-size:12px;letter-spacing:1px}
-.sep:before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,162,39,.3),transparent)}
+.opt span{font:600 12.5px Cairo;color:#CCC}
+.opt:has(input:checked){border-color:var(--gold);background:rgba(201,162,39,.14)}
+.opt:has(input:checked) span{color:var(--gold)}
+.sep{text-align:center;margin:28px 0 14px;position:relative;color:#666;font-size:11px;letter-spacing:1px}
+.sep:before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,162,39,.28),transparent)}
 .sep span{background:var(--bg);padding:0 12px;position:relative}
-.pkgs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pkgs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:640px){.pkgs{grid-template-columns:1fr}}
-.pkg{border:2px solid #333;border-radius:14px;padding:18px 14px;background:rgba(0,0,0,.35);cursor:pointer;position:relative;text-align:center}
+.pkg{border:2px solid #333;border-radius:12px;padding:14px 12px;background:rgba(0,0,0,.3);cursor:pointer;position:relative;text-align:center}
 .pkg input{position:absolute;opacity:0}
-.pkg.on,.pkg:has(input:checked){border-color:var(--gold);box-shadow:0 8px 28px rgba(201,162,39,.25);background:rgba(201,162,39,.08)}
-.pkg .tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;margin-bottom:8px;background:rgba(201,162,39,.22);color:var(--gold)}
-.pkg .tag.ex{background:rgba(100,160,255,.2);color:var(--blue)}
-.pkg h3{font:800 17px Cairo;color:var(--gold);margin-bottom:4px}
-.pkg .price{font:800 26px Cairo}.pkg .price small{display:block;font:500 12px Cairo;color:#999}
-.pkg ul{list-style:none;text-align:right;margin-top:12px}
-.pkg li{font-size:13px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.04)}
-.pkg li:before{content:'✓ ';color:var(--gold);font-weight:700}
-.pay{text-align:center;border:1.5px solid rgba(201,162,39,.4);border-radius:12px;padding:16px;margin:16px 0;background:rgba(0,0,0,.35)}
-.pay .num{display:inline-block;direction:ltr;font:800 20px Cairo;color:var(--gold);border:1px solid var(--gold);padding:8px 18px;border-radius:10px;margin:8px 0;background:rgba(201,162,39,.12)}
-.terms{background:rgba(0,0,0,.3);border:1px solid #333;border-radius:10px;padding:12px 14px;max-height:140px;overflow:auto;font-size:12.5px;color:#AAA;margin-bottom:12px}
-.chk{display:flex;gap:8px;align-items:flex-start;font-size:13px;margin-bottom:10px;cursor:pointer}
-.chk input{width:17px;height:17px;margin-top:3px;accent-color:var(--gold)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:14px 28px;font:800 15px Cairo;cursor:pointer;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#111;box-shadow:0 6px 22px rgba(201,162,39,.3)}
+.pkg:has(input:checked){border-color:var(--gold);box-shadow:0 6px 22px rgba(201,162,39,.22);background:rgba(201,162,39,.07)}
+.pkg .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;margin-bottom:6px;background:rgba(201,162,39,.2);color:var(--gold)}
+.pkg .tag.ex{background:rgba(100,160,255,.18);color:var(--blue)}
+.pkg h3{font:800 15px Cairo;color:var(--gold)}.pkg .price{font:800 22px Cairo}.pkg .price small{display:block;font:500 11px Cairo;color:#999}
+.pkg ul{list-style:none;text-align:right;margin-top:8px}.pkg li{font-size:12px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.03)}.pkg li:before{content:'✓ ';color:var(--gold);font-weight:700}
+.pay{text-align:center;border:1.5px solid rgba(201,162,39,.35);border-radius:11px;padding:12px;margin:12px 0;background:rgba(0,0,0,.3);font-size:13px}
+.pay .num{display:inline-block;direction:ltr;font:800 18px Cairo;color:var(--gold);border:1px solid var(--gold);padding:6px 14px;border-radius:9px;margin:6px 0;background:rgba(201,162,39,.1)}
+.terms{background:rgba(0,0,0,.25);border:1px solid #333;border-radius:9px;padding:10px 12px;max-height:120px;overflow:auto;font-size:12px;color:#AAA;margin-bottom:10px}
+.chk{display:flex;gap:7px;align-items:flex-start;font-size:12.5px;margin-bottom:8px;cursor:pointer}
+.chk input{width:16px;height:16px;margin-top:2px;accent-color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:0;border-radius:11px;padding:12px 22px;font:800 14px Cairo;cursor:pointer;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#111;box-shadow:0 5px 18px rgba(201,162,39,.28)}
 .btn:disabled{opacity:.55;cursor:not-allowed}
 .btn.out{background:0;border:2px solid var(--gold);color:var(--gold);box-shadow:none}
 .btn.blue{background:0;border:2px solid var(--blue);color:var(--blue);box-shadow:none}
-.center{text-align:center;margin-top:12px}
-.note{font-size:12px;color:#888;margin-top:10px}
-.legal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
-@media(max-width:640px){.legal-grid{grid-template-columns:1fr}}
-.legal-item{background:rgba(0,0,0,.3);border:1px solid rgba(100,160,255,.22);border-radius:10px;padding:12px;font-size:13px;color:#DDD}
-.footer{text-align:center;padding:24px 14px;border-top:1px solid rgba(201,162,39,.15);font-size:13px;color:#888}
+.btn.teal{background:0;border:2px solid var(--teal);color:var(--teal);box-shadow:none}
+.btn.purple{background:0;border:2px solid var(--purple);color:var(--purple);box-shadow:none}
+.btn.orange{background:0;border:2px solid var(--orange);color:var(--orange);box-shadow:none}
+.center{text-align:center;margin-top:10px}
+.note{font-size:11.5px;color:#888;margin-top:8px}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:12px 0}
+@media(max-width:640px){.svc-grid{grid-template-columns:1fr}}
+.svc-item{background:rgba(0,0,0,.28);border:1px solid rgba(201,162,39,.15);border-radius:10px;padding:11px 12px;font-size:12.5px;color:#DDD}
+.svc-item strong{display:block;color:var(--gold-l);font-size:13px;margin-bottom:2px}
+.svc-item .en{color:#777;font-size:11px}
+.footer{text-align:center;padding:20px 12px;border-top:1px solid rgba(201,162,39,.12);font-size:12.5px;color:#888}
 .footer a{direction:ltr}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;align-items:center;justify-content:center;padding:16px}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:200;align-items:center;justify-content:center;padding:14px}
 .modal.show{display:flex}
-.modal-box{background:var(--card);border:2px solid var(--gold);border-radius:16px;padding:26px 20px;max-width:380px;width:100%;text-align:center}
-.modal-box h3{color:var(--gold);margin-bottom:8px}.modal-box p{color:#CCC;font-size:14px;margin-bottom:16px}
-.mgmt-card{border-color:rgba(201,162,39,.4)}.legal-card{border-color:rgba(100,160,255,.35)}
+.modal-box{background:var(--card);border:2px solid var(--gold);border-radius:14px;padding:22px 16px;max-width:360px;width:100%;text-align:center}
+.modal-box h3{color:var(--gold);margin-bottom:6px}.modal-box p{color:#CCC;font-size:13.5px;margin-bottom:14px}
+.accent-teal{border-color:rgba(78,205,196,.35)}.accent-purple{border-color:rgba(183,148,244,.35)}.accent-orange{border-color:rgba(246,173,85,.35)}.accent-blue{border-color:rgba(126,182,255,.35)}
+.pill{display:inline-block;font-size:10px;font-weight:700;padding:2px 9px;border-radius:10px;margin-bottom:6px}
+.pill-teal{background:rgba(78,205,196,.18);color:var(--teal)}
+.pill-purple{background:rgba(183,148,244,.18);color:var(--purple)}
+.pill-orange{background:rgba(246,173,85,.18);color:var(--orange)}
+.pill-blue{background:rgba(126,182,255,.18);color:var(--blue)}
 </style>
 </head>
 <body>
 <nav class="nav"><div class="nav-in">
 <div class="brand">SAMAHA CAPITAL</div>
 <div class="nav-links">
-<button class="on" type="button" onclick="go('sec-prop')">تسجيل عقار</button>
+<button class="on" type="button" onclick="go('sec-prop')">عقارات</button>
 <button type="button" onclick="go('sec-mgmt')">إدارة أملاك</button>
-<button type="button" onclick="go('sec-legal')">استشارات قانونية</button>
+<button type="button" onclick="go('sec-invest')">استثمار</button>
+<button type="button" onclick="go('sec-tech')">تكنولوجيا</button>
+<button type="button" onclick="go('sec-pm')">مشروعات</button>
+<button type="button" onclick="go('sec-partner')">شراكات</button>
+<button type="button" onclick="go('sec-legal')">قانوني</button>
 </div></div></nav>
 <header class="header">
 <div class="logo">S</div>
@@ -93,27 +106,29 @@ textarea{min-height:80px;resize:vertical}
 </header>
 <div class="wrap">
 <section id="sec-prop">
-<div class="hero"><h1>تسجيل العقارات</h1><p>سجّل عقارك للبيع أو الإيجار بسهولة — مصمم لجميع فئات السوق المصري.</p></div>
+<div class="hero"><h1>تسجيل العقارات | Property Listing</h1>
+<p>سجّل عقارك للبيع أو الإيجار بسهولة — لجميع فئات السوق المصري.</p>
+<div class="en">List your property for sale or rent across the Egyptian market.</div></div>
 <form id="propForm">
 <div class="card">
-<h2><span class="icon">1</span> بيانات العميل</h2>
+<h2><span class="icon">1</span> بيانات العميل | Client</h2>
 <div class="grid">
 <div class="fg"><label><span class="req">*</span> الاسم الكامل</label><input id="name" required placeholder="أحمد محمد علي"></div>
 <div class="fg"><label><span class="req">*</span> الموبايل</label><input id="phone" type="tel" required placeholder="01xxxxxxxxx"></div>
-<div class="fg"><label>واتساب (إن اختلف)</label><input id="whatsapp" type="tel" placeholder="01xxxxxxxxx"></div>
-<div class="fg"><label>البريد الإلكتروني</label><input id="email" type="email" placeholder="example@email.com"></div>
-<div class="fg full"><label>المدينة / المنطقة</label><input id="city" placeholder="القاهرة - مدينة نصر"></div>
+<div class="fg"><label>واتساب</label><input id="whatsapp" type="tel" placeholder="01xxxxxxxxx"></div>
+<div class="fg"><label>البريد | Email</label><input id="email" type="email" placeholder="example@email.com"></div>
+<div class="fg full"><label>المدينة</label><input id="city" placeholder="القاهرة - مدينة نصر"></div>
 </div></div>
 <div class="card">
-<h2><span class="icon">2</span> بيانات العقار</h2>
-<div class="fg" style="margin-bottom:12px"><label><span class="req">*</span> نوع العرض</label>
-<div class="opts" id="offerOpts">
+<h2><span class="icon">2</span> بيانات العقار | Property</h2>
+<div class="fg" style="margin-bottom:10px"><label><span class="req">*</span> نوع العرض</label>
+<div class="opts">
 <label class="opt"><input type="radio" name="offer" value="بيع" required><span>بيع</span></label>
 <label class="opt"><input type="radio" name="offer" value="إيجار"><span>إيجار</span></label>
-<label class="opt"><input type="radio" name="offer" value="بيع أو إيجار"><span>بيع أو إيجار</span></label>
+<label class="opt"><input type="radio" name="offer" value="بيع أو إيجار"><span>بيع/إيجار</span></label>
 </div></div>
-<div class="fg" style="margin-bottom:12px"><label><span class="req">*</span> نوع العقار</label>
-<div class="opts" id="typeOpts">
+<div class="fg" style="margin-bottom:10px"><label><span class="req">*</span> نوع العقار</label>
+<div class="opts">
 <label class="opt"><input type="radio" name="ptype" value="شقة" required><span>شقة</span></label>
 <label class="opt"><input type="radio" name="ptype" value="فيلا"><span>فيلا</span></label>
 <label class="opt"><input type="radio" name="ptype" value="أرض"><span>أرض</span></label>
@@ -133,68 +148,194 @@ textarea{min-height:80px;resize:vertical}
 <option>الأقصر</option><option>أسوان</option><option>البحر الأحمر</option><option>مطروح</option>
 <option>شمال سيناء</option><option>جنوب سيناء</option><option>الوادي الجديد</option>
 </select></div>
-<div class="fg"><label><span class="req">*</span> المنطقة / الحي</label><input id="area" required placeholder="التجمع الخامس"></div>
+<div class="fg"><label><span class="req">*</span> المنطقة</label><input id="area" required placeholder="التجمع الخامس"></div>
 <div class="fg"><label>المساحة م²</label><input id="size" type="number" min="1" placeholder="150"></div>
 <div class="fg"><label>الغرف</label><select id="rooms"><option value="">اختر</option><option>استوديو</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6+</option></select></div>
 <div class="fg"><label>الطابق</label><input id="floor" placeholder="الثالث / أرضي"></div>
-<div class="fg"><label>السعر / الإيجار (جنيه)</label><input id="price" type="number" min="0" placeholder="2500000"></div>
-<div class="fg full"><label>العنوان التفصيلي</label><input id="address" placeholder="الشارع - رقم العمارة"></div>
-<div class="fg full"><label>ملاحظات</label><textarea id="notes" placeholder="التشطيب، الجراج، حالة الأوراق..."></textarea></div>
+<div class="fg"><label>السعر / الإيجار</label><input id="price" type="number" min="0" placeholder="2500000"></div>
+<div class="fg full"><label>العنوان</label><input id="address" placeholder="الشارع - رقم العمارة"></div>
+<div class="fg full"><label>ملاحظات</label><textarea id="notes" placeholder="التشطيب، الجراج، الأوراق..."></textarea></div>
 </div></div>
 <div class="card">
 <h2><span class="icon">3</span> التأكيد</h2>
-<div class="terms"><strong style="color:var(--gold)">إقرار:</strong> أقر بأن البيانات صحيحة حسب علمي.<br>
-<strong style="color:var(--gold)">الشروط:</strong> التسجيل مجاني. البيانات سرية. التواصل عبر الأرقام الرسمية فقط.</div>
+<div class="terms">التسجيل مجاني. البيانات سرية. التواصل عبر الأرقام الرسمية فقط.</div>
 <label class="chk"><input type="checkbox" id="c1" required><span>أؤكد صحة بيانات العقار <span class="req">*</span></span></label>
 <label class="chk"><input type="checkbox" id="c2" required><span>أوافق على الشروط <span class="req">*</span></span></label>
 <div class="center"><button class="btn" type="submit" id="btnProp">إرسال عبر واتساب</button>
-<p class="note">حفظ تلقائي + واتساب إدارة العقارات: <strong>01505494790</strong></p></div>
+<p class="note">حفظ + واتساب: <strong>01505494790</strong></p></div>
 </div>
 </form>
 </section>
-<div class="sep"><span>إدارة الأملاك</span></div>
-<section id="sec-mgmt" class="card mgmt-card">
-<div class="hero" style="margin:0 0 16px;border:0;padding:12px"><h1>إدارة الأملاك</h1><p>نسبة من الإيجار المحصّل فقط — مناسبة للمقيمين والمغتربين.</p></div>
+<div class="sep"><span>إدارة الأملاك · Property Management</span></div>
+<section id="sec-mgmt" class="card">
+<div class="hero" style="margin:0 0 12px;border:0;padding:10px"><h1>إدارة الأملاك | Property Management</h1>
+<p>نسبة من الإيجار المحصّل — للمقيمين والمغتربين.</p>
+<div class="en">Percentage of collected rent only — for residents & expats.</div></div>
 <div class="pkgs">
 <label class="pkg"><input type="radio" name="pkg" value="باقة الإدارة الذكية - 7%">
 <div class="tag">الأكثر اختياراً</div><h3>الإدارة الذكية</h3>
 <div class="price">7%<small>من الإيجار الشهري</small></div>
-<ul><li>تسويق احترافي</li><li>تحصيل ومتابعة مستأجرين</li><li>تقارير شهرية</li><li>صيانة دورية</li><li>دعم واتساب</li></ul></label>
+<ul><li>تسويق احترافي</li><li>تحصيل ومتابعة</li><li>تقارير شهرية</li><li>صيانة دورية</li></ul></label>
 <label class="pkg"><input type="radio" name="pkg" value="باقة المغترب بلس - 9%">
 <div class="tag ex">للمغتربين</div><h3>المغترب بلس</h3>
 <div class="price">9%<small>من الإيجار الشهري</small></div>
-<ul><li>كل مميزات الذكية</li><li>تقارير عربي/إنجليزي</li><li>تصوير دوري</li><li>متابعة قانونية</li><li>أولوية الدعم</li></ul></label>
+<ul><li>كل مميزات الذكية</li><li>تقارير عربي/إنجليزي</li><li>تصوير دوري</li><li>أولوية الدعم</li></ul></label>
 </div>
-<div class="grid" style="margin-top:16px">
-<div class="fg"><label>مغترب خارج مصر؟</label><select id="expat"><option value="لا">لا - مقيم</option><option value="نعم">نعم - مغترب</option></select></div>
+<div class="grid" style="margin-top:12px">
+<div class="fg"><label>مغترب؟</label><select id="expat"><option value="لا">لا - مقيم</option><option value="نعم">نعم - مغترب</option></select></div>
 <div class="fg"><label>دولة الإقامة</label><input id="expatCountry" placeholder="السعودية / الإمارات"></div>
-<div class="fg full"><label>ملاحظات الإدارة</label><textarea id="mgmtNotes" placeholder="عدد العقارات، الإيجار التقريبي..."></textarea></div>
+<div class="fg full"><label>ملاحظات</label><textarea id="mgmtNotes" placeholder="عدد العقارات، الإيجار..."></textarea></div>
 </div>
-<div class="pay"><div>الدفع عبر InstaPay / Vodafone Cash</div><div class="num">01016105658</div>
-<div class="fg" style="max-width:280px;margin:10px auto 0"><label>رقم التحويل (اختياري)</label><input id="payRef" placeholder="رقم العملية"></div></div>
-<div class="terms"><strong style="color:var(--gold)">بنود الاشتراك:</strong> الأتعاب من الإيجار المحصّل فقط. العمل بعد المستندات والتأكيد. السرية مضمونة. إنهاء الخدمة بإشعار 15 يوماً.</div>
+<div class="pay">InstaPay / Vodafone Cash<div class="num">01016105658</div>
+<div class="fg" style="max-width:260px;margin:8px auto 0"><label>رقم التحويل</label><input id="payRef" placeholder="اختياري"></div></div>
 <label class="chk"><input type="checkbox" id="cMgmt"><span>أوافق على شروط إدارة الأملاك</span></label>
 <div class="center"><button class="btn out" type="button" id="btnMgmt">طلب باقة عبر واتساب</button>
-<p class="note">قسم إدارة الأملاك: <strong>01016105658</strong></p></div>
+<p class="note">إدارة الأملاك: <strong>01016105658</strong></p></div>
 </section>
-<div class="sep"><span>الاستشارات القانونية</span></div>
-<section id="sec-legal" class="card legal-card">
-<div class="hero" style="margin:0 0 16px;border:0;padding:12px"><h1>الاستشارات القانونية العقارية</h1><p>بالتعاون مع <strong style="color:var(--gold-l)">مؤسسة سماحة القانونية</strong></p></div>
-<div class="legal-grid">
-<div class="legal-item">① استشارات بيع وإيجار وتمليك</div>
-<div class="legal-item">② مراجعة وصياغة العقود</div>
-<div class="legal-item">③ فحص الملكية والسجلات</div>
-<div class="legal-item">④ التسجيل والشهر العقاري</div>
-<div class="legal-item">⑤ متابعة النزاعات العقارية</div>
-<div class="legal-item">⑥ استشارات المغتربين</div>
+<div class="sep"><span>الاستثمار · Investment</span></div>
+<section id="sec-invest" class="card accent-orange">
+<div class="pill pill-orange">INVESTMENT</div>
+<div class="hero" style="margin:0 0 12px;border:0;padding:10px"><h1>الاستثمار العقاري | Real Estate Investment</h1>
+<p>استشارات استثمار، تحليل محفظة، وهيكلة فرص للمستثمرين والمغتربين.</p>
+<div class="en">Investment advisory, portfolio analysis & opportunity structuring.</div></div>
+<div class="svc-grid">
+<div class="svc-item"><strong>دراسات جدوى استثمارية</strong><span class="en">Feasibility & ROI studies</span></div>
+<div class="svc-item"><strong>تحليل محفظة عقارية</strong><span class="en">Portfolio analysis</span></div>
+<div class="svc-item"><strong>فرص استثمار للمغتربين</strong><span class="en">Expat investment opportunities</span></div>
+<div class="svc-item"><strong>هيكلة صناديق وملكية جزئية</strong><span class="en">REITs & fractional guidance</span></div>
 </div>
-<div class="center"><button class="btn blue" type="button" id="btnLegal">طلب استشارة عبر واتساب</button>
-<p class="note">القسم القانوني: <strong style="color:var(--blue)">01093960453</strong></p></div>
+<div class="grid">
+<div class="fg"><label>نوع الطلب</label>
+<select id="invType">
+<option value="استشارة استثمارية">استشارة استثمارية | Advisory</option>
+<option value="دراسة جدوى">دراسة جدوى | Feasibility</option>
+<option value="تحليل محفظة">تحليل محفظة | Portfolio</option>
+<option value="فرصة استثمار">فرصة استثمار | Opportunity</option>
+</select></div>
+<div class="fg"><label>الميزانية التقريبية (جنيه)</label><input id="invBudget" type="number" placeholder="مثال: 2000000"></div>
+<div class="fg full"><label>تفاصيل الطلب</label><textarea id="invNotes" placeholder="المدن المستهدفة، نوع العقار، أفق الاستثمار..."></textarea></div>
+</div>
+<div class="center" style="margin-top:14px"><button class="btn orange" type="button" id="btnInv">طلب استشارة استثمار عبر واتساب</button>
+<p class="note">Investment desk: <strong>01505494790</strong></p></div>
+</section>
+<div class="sep"><span>التكنولوجيا · Technology / PropTech</span></div>
+<section id="sec-tech" class="card accent-teal">
+<div class="pill pill-teal">TECHNOLOGY</div>
+<div class="hero" style="margin:0 0 12px;border:0;padding:10px"><h1>التكنولوجيا العقارية | PropTech & Digital</h1>
+<p>تحول رقمي للمطورين والوسطاء: أنظمة، تحليل سوق، وتسويق ذكي.</p>
+<div class="en">Digital transformation, smart systems & market intelligence for developers & brokers.</div></div>
+<div class="svc-grid">
+<div class="svc-item"><strong>تحول رقمي عقاري</strong><span class="en">Real estate digital transformation</span></div>
+<div class="svc-item"><strong>أنظمة إدارة وCRM</strong><span class="en">Property CRM & operations systems</span></div>
+<div class="svc-item"><strong>تحليل سوق وذكاء عقاري</strong><span class="en">Market intelligence & pricing</span></div>
+<div class="svc-item"><strong>تسويق رقمي وتجارب افتراضية</strong><span class="en">Digital marketing & virtual tours</span></div>
+</div>
+<div class="grid">
+<div class="fg"><label>الخدمة المطلوبة</label>
+<select id="techType">
+<option value="تحول رقمي">تحول رقمي | Digital Transformation</option>
+<option value="نظام إدارة / CRM">نظام إدارة / CRM</option>
+<option value="تحليل سوق">تحليل سوق | Market Intelligence</option>
+<option value="تسويق رقمي">تسويق رقمي | Digital Marketing</option>
+<option value="استشارة تقنية">استشارة تقنية | Tech Consulting</option>
+</select></div>
+<div class="fg"><label>حجم النشاط</label>
+<select id="techScale">
+<option value="فرد / وسيط">فرد / وسيط</option>
+<option value="مكتب صغير">مكتب صغير</option>
+<option value="شركة متوسطة">شركة متوسطة</option>
+<option value="مطور عقاري">مطور عقاري</option>
+</select></div>
+<div class="fg full"><label>وصف الاحتياج</label><textarea id="techNotes" placeholder="الأنظمة الحالية، التحديات، الأهداف..."></textarea></div>
+</div>
+<div class="center" style="margin-top:14px"><button class="btn teal" type="button" id="btnTech">طلب خدمة تقنية عبر واتساب</button>
+<p class="note">Technology desk: <strong>01505494790</strong></p></div>
+</section>
+<div class="sep"><span>إدارة المشروعات · Project Management</span></div>
+<section id="sec-pm" class="card accent-purple">
+<div class="pill pill-purple">PROJECT MANAGEMENT</div>
+<div class="hero" style="margin:0 0 12px;border:0;padding:10px"><h1>إدارة المشروعات | Project Management</h1>
+<p>إدارة تنفيذ من التخطيط حتى التسليم: تكلفة، جدول، وجودة.</p>
+<div class="en">End-to-end delivery: cost control, timeline, quality & handover.</div></div>
+<div class="svc-grid">
+<div class="svc-item"><strong>إدارة مشروع تطوير عقاري</strong><span class="en">Development project management</span></div>
+<div class="svc-item"><strong>مراقبة تكلفة وجدول زمني</strong><span class="en">Cost & schedule control</span></div>
+<div class="svc-item"><strong>إشراف تشطيب وتسليم</strong><span class="en">Fit-out & handover supervision</span></div>
+<div class="svc-item"><strong>تنسيق مقاولين وموردين</strong><span class="en">Contractor & vendor coordination</span></div>
+</div>
+<div class="grid">
+<div class="fg"><label>نوع المشروع</label>
+<select id="pmType">
+<option value="تطوير سكني">تطوير سكني | Residential</option>
+<option value="تجاري / إداري">تجاري / إداري | Commercial</option>
+<option value="تشطيب وحدات">تشطيب وحدات | Fit-out</option>
+<option value="إعادة تأهيل">إعادة تأهيل | Renovation</option>
+<option value="أخرى">أخرى | Other</option>
+</select></div>
+<div class="fg"><label>مرحلة المشروع</label>
+<select id="pmStage">
+<option value="فكرة / دراسة">فكرة / دراسة</option>
+<option value="تصميم">تصميم</option>
+<option value="تنفيذ">تنفيذ</option>
+<option value="تشطيب">تشطيب</option>
+<option value="تسليم">تسليم</option>
+</select></div>
+<div class="fg full"><label>تفاصيل المشروع</label><textarea id="pmNotes" placeholder="الموقع، المساحة، الميزانية التقريبية، التحديات..."></textarea></div>
+</div>
+<div class="center" style="margin-top:14px"><button class="btn purple" type="button" id="btnPm">طلب إدارة مشروع عبر واتساب</button>
+<p class="note">Projects desk: <strong>01505494790</strong></p></div>
+</section>
+<div class="sep"><span>إدارة المشاركات · Partnerships</span></div>
+<section id="sec-partner" class="card accent-blue">
+<div class="pill pill-blue">PARTNERSHIPS</div>
+<div class="hero" style="margin:0 0 12px;border:0;padding:10px"><h1>إدارة المشاركات | Partnerships & JVs</h1>
+<p>هيكلة شراكات، تحالفات استثمارية، وشبكات وسطاء للمطورين والمستثمرين.</p>
+<div class="en">JV structuring, strategic alliances & brokerage network activation.</div></div>
+<div class="svc-grid">
+<div class="svc-item"><strong>هيكلة شراكات استثمارية (JV)</strong><span class="en">Joint venture structuring</span></div>
+<div class="svc-item"><strong>شراكات خليجية–مصرية</strong><span class="en">Cross-border Gulf–Egypt partnerships</span></div>
+<div class="svc-item"><strong>تفعيل شبكة وسطاء</strong><span class="en">Broker network activation</span></div>
+<div class="svc-item"><strong>اتفاقيات وتحالفات استراتيجية</strong><span class="en">Strategic MOUs & alliances</span></div>
+</div>
+<div class="grid">
+<div class="fg"><label>نوع المشاركة</label>
+<select id="parType">
+<option value="شراكة استثمارية JV">شراكة استثمارية | JV</option>
+<option value="تحالف استراتيجي">تحالف استراتيجي | Alliance</option>
+<option value="شبكة وسطاء">شبكة وسطاء | Broker Network</option>
+<option value="دخول سوق / توسع">دخول سوق / توسع | Market Entry</option>
+</select></div>
+<div class="fg"><label>صفة الطرف</label>
+<select id="parRole">
+<option value="مستثمر">مستثمر | Investor</option>
+<option value="مطور">مطور | Developer</option>
+<option value="وسيط / مكتب">وسيط / مكتب</option>
+<option value="شركة تقنية">شركة تقنية | Tech Co.</option>
+<option value="أخرى">أخرى</option>
+</select></div>
+<div class="fg full"><label>وصف الفرصة أو الاحتياج</label><textarea id="parNotes" placeholder="أطراف محتملة، حجم الاستثمار، السوق المستهدف..."></textarea></div>
+</div>
+<div class="center" style="margin-top:14px"><button class="btn blue" type="button" id="btnPar">طلب شراكة عبر واتساب</button>
+<p class="note">Partnerships desk: <strong>01505494790</strong></p></div>
+</section>
+<div class="sep"><span>الاستشارات القانونية · Legal</span></div>
+<section id="sec-legal" class="card accent-blue">
+<div class="hero" style="margin:0 0 12px;border:0;padding:10px"><h1>الاستشارات القانونية العقارية | Legal Advisory</h1>
+<p>بالتعاون مع <strong style="color:var(--gold-l)">مؤسسة سماحة القانونية</strong></p>
+<div class="en">In partnership with Samaha Legal Firm</div></div>
+<div class="svc-grid">
+<div class="svc-item"><strong>استشارات بيع وإيجار وتمليك</strong><span class="en">Sale, lease & ownership advice</span></div>
+<div class="svc-item"><strong>مراجعة وصياغة العقود</strong><span class="en">Contract review & drafting</span></div>
+<div class="svc-item"><strong>فحص الملكية والسجلات</strong><span class="en">Title & registry due diligence</span></div>
+<div class="svc-item"><strong>التسجيل والشهر العقاري</strong><span class="en">Registration & notarization</span></div>
+</div>
+<div class="center"><button class="btn blue" type="button" id="btnLegal">طلب استشارة قانونية عبر واتساب</button>
+<p class="note">Legal: <strong style="color:var(--blue)">01093960453</strong></p></div>
 </section>
 </div>
 <footer class="footer">
 <div>عقارات: <a href="https://wa.me/201505494790">01505494790</a> · أملاك: <a href="https://wa.me/201016105658">01016105658</a> · قانوني: <a href="https://wa.me/201093960453" style="color:var(--blue)">01093960453</a></div>
-<div style="margin-top:8px;font-size:12px;color:#666">© 2026 SAMAHA CAPITAL</div>
+<div style="margin-top:6px;font-size:11px;color:#666">© 2026 SAMAHA CAPITAL — Investment • Technology • Consulting • Real Estate</div>
 </footer>
 <div class="modal" id="modal"><div class="modal-box">
 <h3 id="mTitle">تم الحفظ ✓</h3>
@@ -203,7 +344,7 @@ textarea{min-height:80px;resize:vertical}
 </div></div>
 <script>
 const SHEETS_URL="https://script.google.com/macros/s/AKfycbzfFT0bUZH6aGyXCWtrlFKfn4YrhEEFLMbkl62-x7CCQYcTU93j0AcvFQBhwabbdXwpIg/exec";
-function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});}
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'})}
 function val(id){return (document.getElementById(id)?.value||'').trim()}
 function radio(name){return document.querySelector('input[name="'+name+'"]:checked')?.value||''}
 async function saveToSheet(payload){
@@ -220,17 +361,18 @@ async function saveToSheet(payload){
     return {ok:false,id};
   }
 }
-function showModal(title,msg){document.getElementById('mTitle').textContent=title;document.getElementById('mMsg').textContent=msg;document.getElementById('modal').classList.add('show')}
+function showModal(t,m){document.getElementById('mTitle').textContent=t;document.getElementById('mMsg').textContent=m;document.getElementById('modal').classList.add('show')}
 function openWA(num,text){window.open('https://wa.me/2'+num.replace(/^0/,'')+'?text='+encodeURIComponent(text),'_blank')}
+function baseClient(){return {name:val('name')||'لم يُحدد',phone:val('phone')||'لم يُحدد',whatsapp:val('whatsapp')||val('phone')||'',email:val('email'),city:val('city')}}
 document.getElementById('propForm').addEventListener('submit',async function(e){
   e.preventDefault();
   if(!document.getElementById('c1').checked||!document.getElementById('c2').checked){alert('يرجى تأكيد البيانات والشروط');return}
-  const name=val('name'), phone=val('phone'), offer=radio('offer'), ptype=radio('ptype'), gov=val('gov'), area=val('area');
+  const name=val('name'),phone=val('phone'),offer=radio('offer'),ptype=radio('ptype'),gov=val('gov'),area=val('area');
   if(!name||!phone||!offer||!ptype||!gov||!area){alert('أكمل الحقول الإلزامية');return}
   const btn=document.getElementById('btnProp');btn.disabled=true;btn.textContent='جاري الحفظ...';
-  const payload={type:'تسجيل عقار',name,phone,whatsapp:val('whatsapp')||phone,email:val('email'),city:val('city'),offerType:offer,propertyType:ptype,governorate:gov,area,areaSize:val('size'),rooms:val('rooms'),floor:val('floor'),price:val('price'),address:val('address'),notes:val('notes'),package:'',isExpat:'',expatCountry:'',mgmtNotes:''};
+  const payload={type:'تسجيل عقار',...baseClient(),offerType:offer,propertyType:ptype,governorate:gov,area,areaSize:val('size'),rooms:val('rooms'),floor:val('floor'),price:val('price'),address:val('address'),notes:val('notes'),package:'',isExpat:'',expatCountry:'',mgmtNotes:''};
   const r=await saveToSheet(payload);
-  const msg=`🏛️ *تسجيل عقار - SAMAHA CAPITAL*\n📋 ${r.id}\n\n👤 ${name}\n📱 ${phone}\n🏠 ${offer} | ${ptype}\n📍 ${gov} - ${area}\n📐 ${val('size')||'-'} م² | 💰 ${val('price')||'-'}\n📝 ${val('notes')||'-'}\n\n✅ تم الحفظ`;
+  const msg=`🏛️ *تسجيل عقار - SAMAHA CAPITAL*\n📋 ${r.id}\n\n👤 ${name}\n📱 ${phone}\n🏠 ${offer} | ${ptype}\n📍 ${gov} - ${area}\n📐 ${val('size')||'-'} | 💰 ${val('price')||'-'}\n📝 ${val('notes')||'-'}\n\n✅ تم الحفظ`;
   showModal('تم الحفظ ✓','رقم الطلب: '+r.id);
   setTimeout(()=>{openWA('01505494790',msg);btn.disabled=false;btn.textContent='إرسال عبر واتساب'},900);
 });
@@ -238,22 +380,42 @@ document.getElementById('btnMgmt').addEventListener('click',async function(){
   const pkg=radio('pkg');
   if(!pkg){alert('اختر باقة أولاً');return}
   if(!document.getElementById('cMgmt').checked){alert('وافق على الشروط');return}
-  const name=val('name')||'لم يُحدد', phone=val('phone')||'لم يُحدد';
   const btn=this;btn.disabled=true;btn.textContent='جاري الحفظ...';
-  const payload={type:'إدارة أملاك',name,phone,whatsapp:phone,email:val('email'),city:val('city'),offerType:'',propertyType:'',governorate:'',area:'',areaSize:'',rooms:'',floor:'',price:'',address:'',notes:'',package:pkg,isExpat:val('expat'),expatCountry:val('expatCountry'),mgmtNotes:val('mgmtNotes'),paymentRef:val('payRef')};
+  const c=baseClient();
+  const payload={type:'إدارة أملاك',...c,offerType:'',propertyType:'',governorate:'',area:'',areaSize:'',rooms:'',floor:'',price:'',address:'',notes:'',package:pkg,isExpat:val('expat'),expatCountry:val('expatCountry'),mgmtNotes:val('mgmtNotes'),paymentRef:val('payRef')};
   const r=await saveToSheet(payload);
-  const msg=`🏢 *إدارة أملاك - SAMAHA CAPITAL*\n📋 ${r.id}\n\n📦 ${pkg}\n👤 ${name}\n📱 ${phone}\n🌍 مغترب: ${val('expat')} ${val('expatCountry')}\n📝 ${val('mgmtNotes')||'-'}\n💳 ${val('payRef')||'-'}\n\n✅ تم الحفظ`;
+  const msg=`🏢 *إدارة أملاك - SAMAHA CAPITAL*\n📋 ${r.id}\n\n📦 ${pkg}\n👤 ${c.name}\n📱 ${c.phone}\n🌍 ${val('expat')} ${val('expatCountry')}\n📝 ${val('mgmtNotes')||'-'}\n\n✅ تم الحفظ`;
   showModal('تم الحفظ ✓','رقم الطلب: '+r.id);
   setTimeout(()=>{openWA('01016105658',msg);btn.disabled=false;btn.textContent='طلب باقة عبر واتساب'},900);
 });
-document.getElementById('btnLegal').addEventListener('click',async function(){
-  const name=val('name')||'لم يُحدد', phone=val('phone')||'لم يُحدد';
-  const btn=this;btn.disabled=true;btn.textContent='جاري الحفظ...';
-  const payload={type:'استشارة قانونية',name,phone,whatsapp:phone,email:val('email'),city:val('city'),offerType:'',propertyType:'',governorate:'',area:'',areaSize:'',rooms:'',floor:'',price:'',address:'',notes:'',package:'',isExpat:'',expatCountry:'',mgmtNotes:''};
+async function serviceRequest(type,extra,wa,btn,label){
+  const c=baseClient();
+  btn.disabled=true;btn.textContent='جاري الحفظ...';
+  const payload={type,...c,offerType:'',propertyType:'',governorate:'',area:'',areaSize:'',rooms:'',floor:'',price:'',address:'',notes:extra.notes||'',package:extra.package||'',isExpat:'',expatCountry:'',mgmtNotes:extra.mgmtNotes||''};
+  Object.assign(payload,extra);
   const r=await saveToSheet(payload);
-  const msg=`⚖️ *استشارة قانونية - SAMAHA CAPITAL*\n📋 ${r.id}\n\nبالتعاون مع مؤسسة سماحة القانونية\n👤 ${name}\n📱 ${phone}\n\nأرغب في استشارة قانونية عقارية.\n✅ تم الحفظ`;
+  const msg=`✦ *${type} - SAMAHA CAPITAL*\n📋 ${r.id}\n\n👤 ${c.name}\n📱 ${c.phone}\n📧 ${c.email||'-'}\n\n${extra.summary||''}\n\n✅ تم الحفظ`;
   showModal('تم الحفظ ✓','رقم الطلب: '+r.id);
-  setTimeout(()=>{openWA('01093960453',msg);btn.disabled=false;btn.textContent='طلب استشارة عبر واتساب'},900);
+  setTimeout(()=>{openWA(wa,msg);btn.disabled=false;btn.textContent=label},900);
+}
+document.getElementById('btnInv').addEventListener('click',function(){
+  const t=val('invType'), b=val('invBudget'), n=val('invNotes');
+  serviceRequest('استثمار عقاري',{package:t,notes:n,mgmtNotes:'Budget: '+b,summary:`📊 النوع: ${t}\n💰 الميزانية: ${b||'-'}\n📝 ${n||'-'}`},'01505494790',this,'طلب استشارة استثمار عبر واتساب');
+});
+document.getElementById('btnTech').addEventListener('click',function(){
+  const t=val('techType'), s=val('techScale'), n=val('techNotes');
+  serviceRequest('تكنولوجيا PropTech',{package:t,notes:n,mgmtNotes:s,summary:`💻 الخدمة: ${t}\n🏢 الحجم: ${s}\n📝 ${n||'-'}`},'01505494790',this,'طلب خدمة تقنية عبر واتساب');
+});
+document.getElementById('btnPm').addEventListener('click',function(){
+  const t=val('pmType'), s=val('pmStage'), n=val('pmNotes');
+  serviceRequest('إدارة مشروعات',{package:t+' | '+s,notes:n,summary:`📋 المشروع: ${t}\n📍 المرحلة: ${s}\n📝 ${n||'-'}`},'01505494790',this,'طلب إدارة مشروع عبر واتساب');
+});
+document.getElementById('btnPar').addEventListener('click',function(){
+  const t=val('parType'), s=val('parRole'), n=val('parNotes');
+  serviceRequest('شراكات ومشاركات',{package:t+' | '+s,notes:n,summary:`🤝 النوع: ${t}\n👤 الصفة: ${s}\n📝 ${n||'-'}`},'01505494790',this,'طلب شراكة عبر واتساب');
+});
+document.getElementById('btnLegal').addEventListener('click',function(){
+  serviceRequest('استشارة قانونية',{summary:`⚖️ بالتعاون مع مؤسسة سماحة القانونية\nأرغب في استشارة قانونية عقارية.`},'01093960453',this,'طلب استشارة قانونية عبر واتساب');
 });
 </script>
 </body>
