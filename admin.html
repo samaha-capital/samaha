@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة التحكم | SAMAHA CAPITAL</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A227;--card:#161616;--gray:#222;--txt:#EEE}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Cairo',sans-serif;background:#0B0B0B;color:var(--txt);min-height:100vh}
+.box{max-width:360px;margin:80px auto;background:var(--card);border:1px solid rgba(201,162,39,.3);border-radius:16px;padding:28px;text-align:center}
+.box h1{color:var(--gold);font-size:20px;margin-bottom:6px}
+.box p{color:#888;font-size:13px;margin-bottom:16px}
+input{width:100%;background:var(--gray);border:1.5px solid #333;border-radius:10px;padding:12px;font:15px Cairo;color:#fff;text-align:center;margin-bottom:12px;outline:0}
+input:focus{border-color:var(--gold)}
+.btn{width:100%;border:0;border-radius:10px;padding:12px;font:700 14px Cairo;cursor:pointer;background:linear-gradient(135deg,#C9A227,#A67C00);color:#111}
+.top{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid rgba(201,162,39,.25);position:sticky;top:0;background:rgba(11,11,11,.96)}
+.top .b{color:var(--gold);font-weight:800}
+.top button,.top a{background:0;border:1px solid var(--gold);color:var(--gold);font:600 12px Cairo;padding:6px 12px;border-radius:8px;cursor:pointer;text-decoration:none;margin-right:6px}
+.wrap{max-width:1100px;margin:0 auto;padding:18px 12px 40px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+@media(max-width:700px){.stats{grid-template-columns:1fr 1fr}}
+.stat{background:var(--card);border:1px solid rgba(201,162,39,.2);border-radius:12px;padding:14px;text-align:center}
+.stat .n{font:800 24px Cairo;color:var(--gold)}.stat .l{font-size:12px;color:#888}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.filters input,.filters select{background:var(--gray);border:1.5px solid #333;border-radius:8px;padding:8px 10px;font:13px Cairo;color:#fff;outline:0}
+.filters input{flex:1;min-width:160px}
+.table{background:var(--card);border:1px solid rgba(201,162,39,.2);border-radius:12px;overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:rgba(201,162,39,.1);color:#E8D48B;text-align:right;padding:10px 12px;white-space:nowrap}
+td{padding:10px 12px;border-top:1px solid rgba(255,255,255,.04);vertical-align:top}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700}
+.bp{background:rgba(201,162,39,.2);color:var(--gold)}.bm{background:rgba(100,200,120,.2);color:#7DDB8E}.bl{background:rgba(100,160,255,.2);color:#7EB6FF}
+.err{background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.3);color:#FF8A8A;padding:12px;border-radius:10px;margin-bottom:12px;font-size:13px}
+.hidden{display:none!important}
+.loading{text-align:center;padding:40px;color:var(--gold)}
+.wa{color:#25D366;font-weight:600;text-decoration:none}
+</style>
+</head>
+<body>
+<div id="login" class="box">
+<h1>لوحة التحكم</h1>
+<p>SAMAHA CAPITAL</p>
+<input type="password" id="pass" placeholder="كلمة المرور" autocomplete="off">
+<button class="btn" type="button" onclick="login()">دخول</button>
+</div>
+<div id="dash" class="hidden">
+<div class="top"><div class="b">SAMAHA CAPITAL — الإدارة</div>
+<div><button type="button" onclick="load()">↻ تحديث</button><a href="index.html">النموذج</a><button type="button" onclick="logout()">خروج</button></div></div>
+<div class="wrap">
+<div class="stats">
+<div class="stat"><div class="n" id="t0">—</div><div class="l">الإجمالي</div></div>
+<div class="stat"><div class="n" id="t1">—</div><div class="l">عقارات</div></div>
+<div class="stat"><div class="n" id="t2">—</div><div class="l">إدارة أملاك</div></div>
+<div class="stat"><div class="n" id="t3">—</div><div class="l">قانوني</div></div>
+</div>
+<div class="filters">
+<input id="q" placeholder="بحث..." oninput="render()">
+<select id="ft" onchange="render()"><option value="">كل الأنواع</option><option value="عقار">تسجيل عقار</option><option value="أملاك">إدارة أملاك</option><option value="قانونية">استشارة قانونية</option></select>
+</div>
+<div id="err" class="err hidden"></div>
+<div id="loading" class="loading">جاري التحميل...</div>
+<div class="table hidden" id="tw"><table><thead><tr>
+<th>رقم</th><th>التاريخ</th><th>النوع</th><th>الاسم</th><th>موبايل</th><th>تفاصيل</th><th>حالة</th>
+</tr></thead><tbody id="tb"></tbody></table></div>
+</div></div>
+<script>
+const URL_="https://script.google.com/macros/s/AKfycbzfFT0bUZH6aGyXCWtrlFKfn4YrhEEFLMbkl62-x7CCQYcTU93j0AcvFQBhwabbdXwpIg/exec";
+const PASS="Aahmed143@#";
+let rows=[];
+function login(){if(document.getElementById('pass').value===PASS){sessionStorage.setItem('sc_admin','1');show()}else alert('كلمة المرور غير صحيحة')}
+function logout(){sessionStorage.removeItem('sc_admin');location.reload()}
+function show(){document.getElementById('login').classList.add('hidden');document.getElementById('dash').classList.remove('hidden');load()}
+if(sessionStorage.getItem('sc_admin')==='1')show();
+document.getElementById('pass').addEventListener('keydown',e=>{if(e.key==='Enter')login()});
+function g(r,...ks){for(const k of ks){if(r[k]!=null&&r[k]!=='')return r[k]}return ''}
+async function load(){
+  document.getElementById('loading').classList.remove('hidden');
+  document.getElementById('tw').classList.add('hidden');
+  document.getElementById('err').classList.add('hidden');
+  try{
+    const res=await fetch(URL_);const j=await res.json();
+    if(!j.success) throw new Error(j.error||'فشل');
+    rows=j.rows||[];
+    document.getElementById('t0').textContent=rows.length;
+    document.getElementById('t1').textContent=rows.filter(r=>String(g(r,'Request Type','type')).includes('عقار')).length;
+    document.getElementById('t2').textContent=rows.filter(r=>String(g(r,'Request Type','type')).includes('أملاك')).length;
+    document.getElementById('t3').textContent=rows.filter(r=>/قانونية|استشارة/.test(String(g(r,'Request Type','type')))).length;
+    render();
+    document.getElementById('loading').classList.add('hidden');
+    document.getElementById('tw').classList.remove('hidden');
+  }catch(e){
+    document.getElementById('loading').classList.add('hidden');
+    document.getElementById('err').classList.remove('hidden');
+    document.getElementById('err').textContent='تعذر التحميل: '+e.message;
+  }
+}
+function badge(t){
+  t=String(t||'');
+  if(t.includes('أملاك')) return '<span class="badge bm">إدارة أملاك</span>';
+  if(/قانونية|استشارة/.test(t)) return '<span class="badge bl">قانوني</span>';
+  return '<span class="badge bp">عقار</span>';
+}
+function render(){
+  const q=(document.getElementById('q').value||'').toLowerCase();
+  const ft=document.getElementById('ft').value;
+  const list=rows.filter(r=>{
+    const t=String(g(r,'Request Type','type'));
+    if(ft&&!t.includes(ft)&&!(ft==='قانونية'&&t.includes('استشارة'))) return false;
+    if(q){const h=(g(r,'Request ID','id')+' '+g(r,'Full Name','name')+' '+g(r,'Mobile','phone')+' '+t).toLowerCase();if(!h.includes(q))return false}
+    return true;
+  });
+  document.getElementById('tb').innerHTML=list.map(r=>{
+    const phone=String(g(r,'Mobile','phone')||'').trim();
+    const wa=phone?`<a class="wa" href="https://wa.me/2${phone.replace(/^0/,'')}" target="_blank">${phone}</a>`:'—';
+    const det=[g(r,'Offer Type'),g(r,'Property Type'),g(r,'Package'),g(r,'Governorate'),g(r,'Area')].filter(Boolean).join(' | ')||'—';
+    return `<tr><td style="color:var(--gold);font-weight:700">${g(r,'Request ID','id')||'—'}</td>
+    <td style="white-space:nowrap;font-size:12px">${g(r,'Date','date')||'—'}</td>
+    <td>${badge(g(r,'Request Type','type'))}</td>
+    <td>${g(r,'Full Name','name')||'—'}</td>
+    <td>${wa}</td>
+    <td style="font-size:12px;color:#AAA">${det}</td>
+    <td>${g(r,'Status','status')||'New'}</td></tr>`;
+  }).join('')||'<tr><td colspan="7" style="text-align:center;color:#777;padding:30px">لا توجد طلبات</td></tr>';
+}
+</script>
+</body>
+</html>
